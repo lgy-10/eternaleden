@@ -57,12 +57,18 @@ sup.h{color:var(--blue);font-size:11px;margin-left:1px;cursor:help}
 .pbar{position:absolute;z-index:4;left:0;right:0;bottom:0;height:1.5px;background:transparent;pointer-events:none}
 .pbar b{position:absolute;left:0;top:0;bottom:0;width:100%;background:var(--blue);transform-origin:left;transform:scaleX(0);opacity:.85}
 .skip{position:absolute;z-index:4;right:22px;top:18px;font-family:var(--en);font-style:italic;font-size:16px;color:#9a9aa3;letter-spacing:.04em;transition:color .8s,opacity .8s}
-.snd{position:absolute;z-index:4;left:22px;top:18px;font-family:var(--en);font-style:italic;font-size:16px;color:#9a9aa3;letter-spacing:.04em;transition:color .8s,opacity .8s;display:flex;align-items:center;gap:8px}
+.snd{position:absolute;z-index:4;left:22px;bottom:22px;font-family:var(--en);font-style:italic;font-size:16px;color:#9a9aa3;letter-spacing:.04em;transition:color .8s,opacity .8s;display:flex;align-items:center;gap:8px}
 .snd::before{content:"";width:6px;height:6px;border-radius:50%;border:1px solid currentColor}
 .snd.on::before{background:currentColor}
 .snd.on{color:var(--blue)}
 .snd.light{color:#7d7d88}.snd.on.light{color:#9aa4ff}
 .snd:hover{color:var(--blue)}
+.gate{position:absolute;inset:0;z-index:6;background:#f6f6f7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity 1s}
+.gate.hide{opacity:0;pointer-events:none}
+.gate .g1{font-family:var(--en);letter-spacing:.3em;font-size:13px;color:#9a9aa3;margin:0 0 18px}
+.gate .g-on{font-size:13.5px;letter-spacing:.16em;color:#1a1a1d;border-bottom:1px solid #1a1a1d;padding:3px 0}
+.gate .g-on:hover{color:var(--blue);border-color:var(--blue)}
+.gate .g-off{font-size:12px;color:var(--gray);letter-spacing:.08em}
 .skip.light{color:#7d7d88}
 .skip:hover{color:var(--blue)}
 .ititle{position:absolute;left:0;right:0;top:26%;text-align:center;pointer-events:none}
@@ -384,6 +390,7 @@ svg.focus .node:not(.hit){opacity:.2}
   <canvas id="cv" aria-hidden="true"></canvas>
   <button class="skip" id="skip">Skip</button>
   <button class="snd" id="snd" aria-pressed="false">Sound <span>off</span></button>
+  <div class="gate" id="gate"><p class="g1">ETERNAL EDEN</p><button class="g-on" id="gateOn">소리와 함께 보기</button><button class="g-off" id="gateOff">소리 없이 보기</button></div>
   <audio id="bgm" preload="auto"></audio>
   <p class="cap" id="cap" aria-live="polite"></p>
   <div class="ititle" id="ititle">
@@ -982,8 +989,9 @@ document.getElementById("again").onclick=openIntro;
 document.addEventListener("keydown",e=>{if(intro.style.display==="none")return;if(e.key==="Escape")closeIntro();else if((e.key===" "||e.key==="ArrowRight")&&!titled){e.preventDefault();next()}});
 window.addEventListener("resize",()=>{if(running)size()});
 if("ResizeObserver" in window)new ResizeObserver(()=>{if(running)size()}).observe(intro);
-if(location.hash&&ids.includes(location.hash.slice(1))&&location.hash!=="#myth"){intro.style.display="none"}
-else start(matchMedia("(prefers-reduced-motion: reduce)").matches);
+if(location.hash&&ids.includes(location.hash.slice(1))&&location.hash!=="#myth"){intro.style.display="none";document.getElementById("gate").remove()}
+else{const gate=document.getElementById("gate"),go=on=>{gate.classList.add("hide");setTimeout(()=>gate.remove(),1000);start(matchMedia("(prefers-reduced-motion: reduce)").matches);if(on)setSound(true)};
+ document.getElementById("gateOn").onclick=e=>{e.stopPropagation();go(true)};document.getElementById("gateOff").onclick=e=>{e.stopPropagation();go(false)}}
 
 document.querySelectorAll("sup.h").forEach(x=>x.title="가설·제안");
 document.querySelectorAll("table.cardify").forEach(t=>{const hs=[...t.querySelectorAll("thead th")].map(th=>th.textContent);t.querySelectorAll("tbody tr").forEach(tr=>[...tr.children].forEach((td,i)=>td.dataset.label=hs[i]||""))});

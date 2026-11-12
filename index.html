@@ -971,15 +971,15 @@ function frame(now){if(!running)return;let T=(now-T0)/1000*SPEED+off;if(T>END+30
  if(T>=END&&!titled){titled=true;skipEl.style.opacity=0;skipEl.style.pointerEvents="none";titleEl.classList.add("on")}
  raf=requestAnimationFrame(frame)}
 const bgm=document.getElementById("bgm"),sndBtn=document.getElementById("snd");
-(function(){try{const bin=atob(document.getElementById("bgmdata").textContent.trim());const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);bgm.src=URL.createObjectURL(new Blob([u],{type:"audio/mpeg"}));bgm.load()}catch(e){bgm.src="media/intro.mp3"}})();let soundOn=false,fadeT=0;
-function bgmSync(T){if(!soundOn)return;const t=T/SPEED;if(t>=bgm.duration-.05){bgm.pause();return}try{bgm.currentTime=Math.max(0,t)}catch(e){}bgm.volume=1;const p=bgm.play();if(p&&p.catch)p.catch(()=>{})}
+(function(){try{const bin=atob(document.getElementById("bgmdata").textContent.trim());const u=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)u[i]=bin.charCodeAt(i);bgm.src=URL.createObjectURL(new Blob([u],{type:"audio/mpeg"}));bgm.load()}catch(e){bgm.src="media/intro.mp3"}})();let soundOn=false,fadeT=0;const VOL=.8;
+function bgmSync(T){if(!soundOn)return;const t=T/SPEED;if(t>=bgm.duration-.05){bgm.pause();return}try{bgm.currentTime=Math.max(0,t)}catch(e){}bgm.volume=VOL;const p=bgm.play();if(p&&p.catch)p.catch(()=>{})}
 function setSound(on){soundOn=on;sndBtn.classList.toggle("on",on);sndBtn.setAttribute("aria-pressed",on);sndBtn.querySelector("span").textContent=on?"on":"off";if(on){clearInterval(fadeT);bgmSync(curT())}else bgm.pause()}
 sndBtn.onclick=e=>{e.stopPropagation();setSound(!soundOn)};
 function jump(T){off=T;T0=performance.now();prev={};bgmSync(T)}
 function start(toEnd){size();running=true;titled=false;ci=-1;capEl.classList.remove("on","out");capEl.innerHTML="";titleEl.classList.remove("on");skipEl.style.opacity="";skipEl.style.pointerEvents="";jump(toEnd?END+.01:0);cancelAnimationFrame(raf);raf=requestAnimationFrame(frame)}
 function curT(){return (performance.now()-T0)/1000*SPEED+off}
 function next(){const T=curT();const k=KEYS.find(k=>k>T+.05);if(k!==undefined)jump(k)}
-function closeIntro(){if(soundOn&&!bgm.paused){clearInterval(fadeT);fadeT=setInterval(()=>{bgm.volume=Math.max(0,bgm.volume-.08);if(bgm.volume<=0){clearInterval(fadeT);bgm.pause();bgm.volume=1}},80)}intro.classList.add("gone");setTimeout(()=>{intro.style.display="none";intro.classList.remove("gone");running=false;cancelAnimationFrame(raf)},1150)}
+function closeIntro(){if(soundOn&&!bgm.paused){clearInterval(fadeT);fadeT=setInterval(()=>{bgm.volume=Math.max(0,bgm.volume-.08);if(bgm.volume<=0){clearInterval(fadeT);bgm.pause();bgm.volume=VOL}},80)}intro.classList.add("gone");setTimeout(()=>{intro.style.display="none";intro.classList.remove("gone");running=false;cancelAnimationFrame(raf)},1150)}
 function openIntro(){intro.style.display="";setToc(false);start(matchMedia("(prefers-reduced-motion: reduce)").matches)}
 cv.addEventListener("click",()=>{if(!titled)next()});
 skipEl.onclick=()=>jump(END-.4);

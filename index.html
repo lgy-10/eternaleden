@@ -381,6 +381,50 @@ svg.focus .node:not(.hit){opacity:.2}
 @media (max-width:760px){.map .lbl{font-size:18px}.map .sub{font-size:14px}.map .en{font-size:16px}}
 #gtip b{display:block;color:#fff;font-size:12px;margin-bottom:2px}
 @media (max-width:760px){.wm{font-size:120px;top:6px;right:16px}.tiers{grid-template-columns:1fr}.tier{border-right:0;margin-right:0;border-top:1px solid var(--line)!important;padding-right:0}.tier:first-child{border-top:0!important}#timeline td.y{width:70px;padding-right:28px}}
+
+.srch{display:flex;align-items:center;color:var(--ink);padding:4px}
+.srch:hover{color:var(--blue)}
+.sx{position:fixed;inset:0;z-index:40;background:rgba(246,246,247,.97);backdrop-filter:blur(8px);overflow:auto;opacity:0;pointer-events:none;transition:opacity .25s}
+.sx.open{opacity:1;pointer-events:auto}
+.sx-in{display:flex;align-items:center;gap:16px;height:72px;border-bottom:1px solid var(--ink)}
+.sx-in input{flex:1;font:inherit;font-size:20px;border:0;background:none;outline:0;color:var(--ink);padding:8px 0}
+.sx-n{font-size:12px;color:var(--gray);margin:14px 0 4px}
+.sx-r{list-style:none;margin:0;padding:0 0 60px}
+.sx-r li{border-top:1px solid var(--line)}
+.sx-r button{display:block;width:100%;text-align:left;padding:13px 0;font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.sx-r button:hover .t{color:var(--blue)}
+.sx-r .w{font-size:11px;color:var(--gray);letter-spacing:.04em}
+.sx-r .t{font-size:14px;line-height:1.65;margin-top:3px;color:#3a3a40}
+.sx-r mark{background:none;color:var(--blue);font-weight:600}
+.flash{animation:flash 1.8s ease}
+@keyframes flash{0%,30%{background:rgba(31,48,230,.09)}100%{background:transparent}}
+.agecalc{border:1px solid var(--line);background:var(--paper);padding:18px 20px 16px;margin-bottom:28px}
+.ac-top{display:flex;justify-content:space-between;align-items:baseline;font-size:14px}
+.ac-l{font-size:11px;letter-spacing:.12em;color:var(--gray);font-weight:600}
+.ac-top b{font-family:var(--en);font-size:26px;font-weight:500;color:var(--blue);margin:0 2px}
+.agecalc input{width:100%;margin:12px 0 14px;accent-color:#1f30e6}
+.ac-list{display:grid;grid-template-columns:repeat(4,1fr);gap:10px 8px}
+.ac-list div{display:flex;align-items:center;gap:8px;font-size:13px}
+.ac-list .av{width:26px;height:26px}
+.ac-list b{font-family:var(--en);font-size:17px;font-weight:500}
+.ac-list .no{color:var(--gray);font-size:11.5px}
+.ac-list .no .av{opacity:.35;filter:grayscale(1)}
+#timeline tr.hl td{background:rgba(31,48,230,.05)}
+.hyl{list-style:none;margin:0;padding:0}
+.hyl li{border-top:1px solid var(--line);padding:10px 0;font-size:13.5px;line-height:1.65;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+.hyl li:first-child{border-top:0}
+.hyl .w{display:block;font-size:11px;color:var(--gray)}
+.hyl button{font-size:11.5px;color:var(--gray);border-bottom:1px solid var(--line);white-space:nowrap;margin-top:16px}
+.hyl button:hover{color:var(--blue);border-color:var(--blue)}
+.fab{position:fixed;right:18px;bottom:18px;z-index:30;display:flex;flex-direction:column;gap:8px;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .3s}
+.fab.on{opacity:1;pointer-events:auto}
+.fab>button{width:40px;height:40px;border-radius:50%;background:rgba(246,246,247,.92);backdrop-filter:blur(8px);border:1px solid var(--line);font-size:16px;color:var(--ink);display:flex;align-items:center;justify-content:center}
+.fab>button:hover{border-color:var(--ink)}
+.fab-pop{display:none;background:var(--paper);border:1px solid var(--line);padding:8px 0;min-width:170px;max-height:60vh;overflow:auto;box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.fab-pop.open{display:block}
+.fab-pop button{display:block;width:100%;text-align:left;padding:8px 16px;font-size:13px;color:var(--ink)}
+.fab-pop button:hover{color:var(--blue)}
+@media (max-width:760px){.ac-list{grid-template-columns:repeat(2,1fr)}.sx-in input{font-size:17px}}
 </style>
 </head>
 <body>
@@ -403,8 +447,10 @@ svg.focus .node:not(.hit){opacity:.2}
 
 <header class="bar"><div class="wrap">
   <a class="brand" href="#myth">ETERNAL EDEN</a>
-  <div class="right"><span class="idx" id="idx"></span><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="toc">INDEX</button></div>
+  <div class="right"><button class="srch" id="srchBtn" aria-label="검색"><svg viewBox="0 0 20 20" width="16" height="16"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.4"/><line x1="12.6" y1="12.6" x2="17" y2="17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></button><span class="idx" id="idx"></span><button class="menu" id="menuBtn" aria-expanded="false" aria-controls="toc">INDEX</button></div>
 </div></header>
+<div class="sx" id="sx" role="dialog" aria-label="검색"><div class="wrap"><div class="sx-in"><input id="sxQ" type="search" placeholder="인물, 용어, 설정 검색" autocomplete="off"><button class="menu" id="sxClose">CLOSE</button></div><p class="sx-n" id="sxN"></p><ol class="sx-r" id="sxR"></ol></div></div>
+<div class="fab" id="fab"><div class="fab-pop" id="fabPop"></div><button id="fabSec" aria-label="이 장의 섹션">≡</button><button id="fabTop" aria-label="맨 위로">↑</button></div>
 <div class="toc" id="toc"><div class="wrap">
   <div class="head"><span class="brand" style="color:#f2f2f2">ETERNAL EDEN</span><button class="menu" id="menuClose">CLOSE</button></div>
   <ol id="tocList"></ol>
@@ -633,7 +679,8 @@ svg.focus .node:not(.hit){opacity:.2}
     <p class="verse">아홉 살의 숲에서
 스물아홉의 겨울까지.</p><p class="note2">멜리사의 나이를 기준으로 적는다.</p>
   </div></div>
-  <div class="wrap"><div class="tbl"><table>
+  <div class="wrap"><div class="agecalc" id="agecalc"><div class="ac-top"><span class="ac-l">시점 계산</span><span>멜리사가 <b id="acM">29</b>세일 때</span></div><input type="range" min="0" max="29" value="29" id="acR" aria-label="멜리사 나이"><div class="ac-list" id="acL"></div></div>
+  <div class="tbl"><table>
     <thead><tr><th>나이</th><th>사건</th></tr></thead>
     <tbody>
       <tr><td class="y">9</td><td>남부 숲에서 이름 없는 소년(11세)을 만나 '델로아'라는 이름을 지어준다. 같은 날 둘 다 입술에 흉터가 생긴다<sup class="h">*</sup></td></tr>
@@ -711,6 +758,7 @@ svg.focus .node:not(.hit){opacity:.2}
       <li>하얀 책은 지금 어디에 있는가</li>
       <li>황국과 수도의 진짜 이름, 현 황제</li>
     </ol>
+    <div class="sec hyp"><div class="k">가설 모아보기<span class="en">Hypotheses</span></div><div><p class="note2" style="margin:0 0 12px">사이트 곳곳의 * 표시를 한곳에 모았다. 확정되면 원래 자리에서 지운다.</p><ol class="hyl" id="hyl"></ol></div></div>
   </div>
 </section>
 
@@ -1019,6 +1067,49 @@ document.addEventListener("pointerout",e=>{const g=e.target.closest(".gl");if(g&
 const hoverDev=matchMedia("(hover:hover)").matches;
 document.addEventListener("click",e=>{const g=e.target.closest(".gl");if(g){if(hoverDev||gOn!==g)gShow(g);else gHide();return}if(gOn)gHide()});
 addEventListener("scroll",()=>{if(gOn)gHide()},{passive:true});
+
+/* ---------- 편의 기능 ---------- */
+const pageOf=el=>el.closest(".page");
+const txtOf=el=>el.tagName==="TR"?[...el.children].map(td=>td.classList.contains("y")?td.childNodes[0].textContent.trim()+"세":td.textContent.trim()).filter(Boolean).join(" · ").replace(/\s+/g," "):el.textContent.replace(/\s+/g," ").trim();
+const secLabel=el=>{const sec=el.closest(".sec");const k=sec&&sec.querySelector(":scope>.k");return k?k.childNodes[0].textContent.trim():""};
+function goTo(pid,el){if(location.hash.slice(1)!==pid){location.hash=pid}setTimeout(()=>{if(el){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash")}},location.hash.slice(1)===pid?30:120)}
+/* 검색 */
+const SX=document.getElementById("sx"),SXQ=document.getElementById("sxQ"),SXR=document.getElementById("sxR"),SXN=document.getElementById("sxN");
+let SIDX=null;
+function buildIdx(){SIDX=[];pages.forEach(p=>{p.querySelectorAll(".wrap p, .wrap li, .wrap tr, .tier, .split>div, figcaption, .duo p").forEach(el=>{if(el.closest(".head-c,.hyp,#agecalc,.rel-list,.relpanel"))return;if(el.querySelector("p,li,tr"))return;const t=txtOf(el);if(t.length<2)return;SIDX.push({pid:p.id,where:p.dataset.ko+(secLabel(el)?" · "+secLabel(el):""),t,el})})});
+ C.forEach(c=>{const t=[c.full,c.ro,c.line,c.role,c.house,c.ability,c.outer,c.inner,c.want,c.flaw,...c.facts,...c.likes,...c.dislikes].filter(Boolean).join(" · ").replace(/\*/g,"");SIDX.push({cid:c.id,where:"인물 · "+c.name,t})})}
+function hl(t,q){const i=t.toLowerCase().indexOf(q.toLowerCase());if(i<0)return esc(t.slice(0,90));const a=Math.max(0,i-34),b=Math.min(t.length,i+q.length+56);return(a?"…":"")+esc(t.slice(a,i))+"<mark>"+esc(t.slice(i,i+q.length))+"</mark>"+esc(t.slice(i+q.length,b))+(b<t.length?"…":"")}
+function runSearch(){const q=SXQ.value.trim();if(!q){SXR.innerHTML="";SXN.textContent="";return}if(!SIDX)buildIdx();
+ const r=SIDX.filter(x=>x.t.toLowerCase().includes(q.toLowerCase())).slice(0,40);SXN.textContent=r.length?`${r.length}${r.length===40?"+":""}곳`:"찾는 내용이 없다";
+ SXR.innerHTML=r.map((x,i)=>`<li><button data-i="${SIDX.indexOf(x)}"><span class="w">${esc(x.where)}</span><div class="t">${hl(x.t,q)}</div></button></li>`).join("")}
+function openSx(o){SX.classList.toggle("open",o);if(o){setTimeout(()=>SXQ.focus(),50)}}
+document.getElementById("srchBtn").onclick=()=>openSx(true);document.getElementById("sxClose").onclick=()=>openSx(false);
+SXQ.addEventListener("input",runSearch);
+SXR.addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(!b)return;const x=SIDX[b.dataset.i];openSx(false);if(x.cid){goTo("characters");setTimeout(()=>openChar(x.cid),200)}else goTo(x.pid,x.el)});
+document.addEventListener("keydown",e=>{if(intro.style.display!=="none")return;if((e.key==="/"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))||(e.key.toLowerCase()==="k"&&(e.metaKey||e.ctrlKey))){e.preventDefault();openSx(true)}else if(e.key==="Escape"&&SX.classList.contains("open"))openSx(false)});
+/* 시점 계산 */
+const acR=document.getElementById("acR"),acL=document.getElementById("acL"),acM=document.getElementById("acM");
+const tlRows=[...document.querySelectorAll("#timeline tbody tr")].map(tr=>{const y=tr.querySelector("td.y");const t=y?y.childNodes[0].textContent:"";const n=t.match(/\d+/g);return{tr,a:n?+n[0]:null,b:n?+(n[1]||n[0]):null}});
+function ageCalc(){const m=+acR.value;acM.textContent=m;const d=29-m;
+ acL.innerHTML=C.filter(c=>c.id!=="melissa").map(c=>{const a=c.age-d;return a>=0?`<div><span class="av" style="background-image:url(img/${c.id}.jpg)"></span><span>${esc(c.name)} <b>${a}</b></span></div>`:`<div class="no"><span class="av" style="background-image:url(img/${c.id}.jpg)"></span><span>${esc(c.name)}<br>태어나기 전</span></div>`}).join("");
+ tlRows.forEach(r=>r.tr.classList.toggle("hl",r.a!==null&&m>=r.a&&m<=r.b))}
+acR.addEventListener("input",ageCalc);ageCalc();
+/* 가설 모아보기 */
+(function(){const hyl=document.getElementById("hyl");const items=[];
+ document.querySelectorAll("sup.h").forEach(s=>{const p=pageOf(s);if(!p||s.closest(".hyp"))return;const blk=s.closest("li,tr,p,.tier,.split>div")||s.parentElement;if(items.some(x=>x.el===blk))return;
+  items.push({pid:p.id,where:p.dataset.ko+(secLabel(blk)?" · "+secLabel(blk):""),t:txtOf(blk).replace(/\*/g,""),el:blk})});
+ C.forEach(c=>c.facts.forEach(f=>{if(f.endsWith("*"))items.push({cid:c.id,where:"인물 · "+c.name,t:f.replace(/\*$/,"")})}));
+ const order=ids;items.sort((a,b)=>order.indexOf(a.pid||"characters")-order.indexOf(b.pid||"characters"));
+ hyl.innerHTML=items.map((x,i)=>`<li><span><span class="w">${esc(x.where)}</span>${esc(x.t.length>140?x.t.slice(0,140)+"…":x.t)}</span><button data-h="${i}">보기</button></li>`).join("");
+ hyl.addEventListener("click",e=>{const b=e.target.closest("button[data-h]");if(!b)return;const x=items[b.dataset.h];if(x.cid){goTo("characters");setTimeout(()=>openChar(x.cid),200)}else goTo(x.pid,x.el)});
+ const k=document.querySelector(".hyp .k");if(k)k.insertAdjacentHTML("beforeend",`<span class="en">${items.length}</span>`)})();
+/* 섹션 이동 · 맨 위로 */
+const fab=document.getElementById("fab"),fabPop=document.getElementById("fabPop");
+function fabUpdate(){fab.classList.toggle("on",scrollY>380&&intro.style.display==="none");if(scrollY<=380)fabPop.classList.remove("open")}
+addEventListener("scroll",fabUpdate,{passive:true});
+document.getElementById("fabTop").onclick=()=>{fabPop.classList.remove("open");scrollTo({top:0,behavior:"smooth"})};
+document.getElementById("fabSec").onclick=()=>{if(fabPop.classList.toggle("open")){const p=pages.find(p=>p.classList.contains("on"));const ks=[...p.querySelectorAll(".sec>.k")];fabPop.innerHTML=ks.length?ks.map((k,i)=>`<button data-s="${i}">${esc(k.childNodes[0].textContent.trim())}</button>`).join(""):'<button disabled style="color:var(--gray)">섹션 없음</button>';fabPop.onclick=e=>{const b=e.target.closest("button[data-s]");if(!b)return;fabPop.classList.remove("open");const el=ks[b.dataset.s].closest(".sec");scrollTo({top:el.getBoundingClientRect().top+scrollY-72,behavior:"smooth"})}}};
+addEventListener("hashchange",()=>{fabPop.classList.remove("open");setTimeout(fabUpdate,50)});
 </script>
 </body>
 </html>

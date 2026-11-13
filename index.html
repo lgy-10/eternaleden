@@ -505,6 +505,55 @@ svg.focus .node:not(.hit){opacity:.2}
 .todo.prop li b{display:block;font-weight:600;font-size:14.5px}
 .todo.prop .pp{display:block;margin-top:6px;font-size:13.5px;line-height:1.75;color:#4a4a52}
 .todo.prop .pp i{font-style:normal;font-size:10.5px;font-weight:600;color:var(--blue);border:1px solid #c9cdf3;border-radius:99px;padding:0 7px;margin-right:8px}
+
+.acts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.acts li{display:grid;grid-template-columns:70px 1fr;gap:18px;padding:22px 24px;background:var(--paper);border:1px solid var(--line)}
+.acts li.dk{background:var(--night);color:#e6e6ea;border-color:var(--night)}
+.acts li.dk p{color:#c9c9d2}.acts li.dk h4 i{color:#8a8a96}
+.acts .an{font-family:var(--en);font-size:36px;line-height:1;color:var(--gray);font-weight:300}
+.acts li.dk .an{color:#9aa4ff}
+.acts h4{margin:0 0 8px;font-size:16px}
+.acts h4 i{font-family:var(--en);font-weight:400;color:var(--gray);font-size:15px;margin-left:8px}
+.acts p{margin:0;font-size:14.5px;line-height:1.85;color:#3a3a40}
+.insts.g2{grid-template-columns:repeat(2,1fr)}
+.lead{font-size:15.5px;line-height:1.9;margin:0 0 22px;color:#2a2a30}
+.duo2{display:grid;grid-template-columns:150px 1fr 150px;gap:26px;align-items:center;margin-bottom:28px}
+.dp{display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--ink)}
+.dpi{width:120px;height:150px;background:#e6e6ea 50% 22%/cover no-repeat;filter:grayscale(1);transition:filter .5s}
+.dp:hover .dpi{filter:none}
+.dp b{font-size:16px;margin-top:6px}.dp i{font-family:var(--ko);font-style:normal;font-size:12px;color:var(--gray)}
+.dmid .quote{margin:0 0 18px;text-align:center}
+.dmid .mirror{margin:0}
+.stp4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stp4 .stp{background:var(--bg);padding:20px 18px}
+.stp4 .sn{font-family:var(--en);font-size:24px;color:var(--blue);font-weight:300}
+.stp4 h4{margin:8px 0 2px;font-size:15px}
+.stp4 small{display:block;font-size:11.5px;color:var(--gray);margin-bottom:10px}
+.stp4 p{margin:0;font-size:13.5px;line-height:1.8;color:#3a3a40}
+.five{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.fv{position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink)}
+.fv:hover{border-color:var(--ink)}
+.fvi{width:64px;height:64px;border-radius:50%;background:#e6e6ea 50% 30%/220% auto no-repeat;filter:grayscale(1);transition:filter .4s}
+.fv:hover .fvi{filter:none}
+.fv b{font-size:13.5px}
+.fn{position:absolute;top:8px;left:10px;font-family:var(--en);font-size:13px;color:var(--gray)}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:96px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tl .era{padding:22px 0 10px 120px}
+.tl .era span{font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--blue)}
+.tl .ev{display:grid;grid-template-columns:96px 1fr;gap:24px;padding:12px 0;position:relative;transition:background .3s}
+.tl .ev::before{content:"";position:absolute;left:92px;top:22px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink)}
+.tl .ev:last-child::before{background:var(--blue);border-color:var(--blue)}
+.tl .ey{text-align:right;padding-right:14px}
+.tl .ey b{display:block;font-family:var(--en);font-size:26px;font-weight:400;line-height:1.2}
+.tl .ey small{font-size:10.5px;color:var(--gray)}
+.tl .eb{background:var(--paper);border:1px solid var(--line);padding:16px 20px}
+.tl .eb h4{margin:0 0 6px;font-size:15px}
+.tl .eb p{margin:0;font-size:14px;line-height:1.85;color:#3a3a40}
+.tl .ev.hl .eb{border-color:#9aa4ff;background:#fbfbff}
+.tl .ev.hl::before{background:var(--blue);border-color:var(--blue)}
+.sheet-bio{font-size:14px;line-height:1.85;color:#3a3a40;margin:0 0 20px}
+@media (max-width:760px){.acts li{grid-template-columns:44px 1fr;padding:18px}.acts .an{font-size:26px}.insts.g2{grid-template-columns:1fr}.duo2{grid-template-columns:1fr 1fr;gap:14px}.duo2 .dmid{grid-column:1/-1;order:3}.dpi{width:100px;height:124px}.stp4{grid-template-columns:1fr}.five{grid-template-columns:repeat(3,1fr)}.tl::before{left:58px}.tl .ev{grid-template-columns:58px 1fr;gap:16px}.tl .ev::before{left:54px}.tl .era{padding-left:76px}.tl .ey{padding-right:8px}.tl .ey b{font-size:20px}}
 </style>
 </head>
 <body>
@@ -550,27 +599,27 @@ svg.focus .node:not(.hit){opacity:.2}
     <div class="w"><span class="sl">White</span>하얀 존재들 — 빚는 자.<br>그들이 만드는 것이 곧 세상의 이치였다.</div>
     <div class="d"><span class="sl">Black</span>검은 머리의 아이 — 빚지 못하는 자.<br>아이는 빛 하나를 데리고 어둠으로 걸었다.</div>
   </div>
-  <div class="wrap">
-    <div class="sec" style="border-top:0;padding-top:48px"><div class="k">기록<span class="en">The Record</span></div>
-      <ol class="steps">
-        <li><span class="n">I</span><div><h4>기</h4><p>아무것도 칠하지 않은 하얀 세계. 어느 날 소리 하나가 번져, 세상을 흑과 백으로 나누었다. 가장 밝은 구체 위에서 하얀 존재들이 세계를 빚었다.</p></div></li>
-        <li><span class="n">II</span><div><h4>승</h4><p>그곳에 검은 머리의 아이가 태어났다. 존재들은 아이를 제 아이처럼 길렀지만, 아이의 손은 아무것도 빚지 못했다.</p></div></li>
-        <li><span class="n">III</span><div><h4>전</h4><p>아이는 어둠으로 걸었다. 곁에는 가장 아껴주던 단 하나의 빛. 어둠의 한가운데에는 하얀 책 한 권, 그리고 이름 모를 무언가가 있었다.</p></div></li>
-        <li><span class="n">IV</span><div><h4>결</h4><p>책장이 넘어가고, 돌아온 땅은 텅 비어 있었다. 아이는 홀로 남겨졌다.</p></div></li>
+  <div class="wrap wpage">
+    <div class="wblk"><div class="wh"><span class="wk">기록</span><span class="we">The Record</span></div>
+      <ol class="acts">
+        <li><span class="an">I</span><div><h4>기 <i>하얀 세계</i></h4><p>아무것도 칠하지 않은 하얀 세계가 있었다. 어느 날 소리 하나가 물결처럼 번지더니, 세상을 흑과 백으로 나누었다. 가장 밝은 구체 위에서 하얀 존재들이 세계를 빚기 시작했다.</p></div></li>
+        <li><span class="an">II</span><div><h4>승 <i>검은 머리의 아이</i></h4><p>그곳에 검은 머리의 아이가 태어났다. 존재들은 아이를 제 아이처럼 아끼며 길렀지만, 아이의 손은 아무것도 빚지 못했다. 모두가 무언가를 만드는 세계에서 아이만 아무것도 만들 수 없었다.</p></div></li>
+        <li class="dk"><span class="an">III</span><div><h4>전 <i>어둠의 한가운데</i></h4><p>아이는 어둠으로 걸어 들어갔다. 곁에는 아이를 가장 아껴 주던 단 하나의 빛이 함께였다. 어둠의 한가운데에서 아이는 하얀 책 한 권과, 이름 모를 무언가를 발견했다.</p></div></li>
+        <li><span class="an">IV</span><div><h4>결 <i>홀로 남은 땅</i></h4><p>책장이 넘어가고, 아이가 돌아왔을 때 땅은 텅 비어 있었다. 존재들도, 곁을 지키던 빛도 없었다. 아이는 하얀 땅에 홀로 남겨졌다.</p></div></li>
       </ol>
     </div>
-    <div class="sec"><div class="k">기록 너머<span class="en">Beyond the Record</span></div>
-      <div class="cols">
-        <div><h4>하얀 존재</h4><p>원자로 이루어진 외계인. 성숙하면 생명체를 만들어 행성을 내어주고, 스스로는 행성으로만 살아간다.</p></div>
-        <div><h4>아이</h4><p>그들이 만든 단 하나의 생명. 아이가 어둠에 간 사이 존재들은 대지가 되었다. 아이는 버려진 게 아니라 세계를 물려받았지만, 그걸 알지 못했다.</p></div>
-        <div><h4>하얀 책</h4><p>중심에 닿기 직전, 동행하던 존재가 스스로 책이 되어 놓였다. 그래서 익숙했다. 계약의 근원이며, 그 존재를 닮은 사람을 계약자로 고른다.</p></div>
-        <div><h4>이름 모를 무언가</h4><p>하얀 세계에 없던 살과 피, 썩고 자라는 것. 아이가 대지에 묻은 그것에서 색이 있고 죽는 생명이 퍼졌다. 흑마술의 근원.</p></div>
+    <div class="wblk"><div class="wh"><span class="wk">기록 너머</span><span class="we">Beyond the Record</span><span class="wn">기록에는 없는, 실제로 있었던 일</span></div>
+      <div class="insts g2">
+        <div class="inst"><b>하얀 존재</b><p>원자로 이루어진 외계의 존재. 성숙하면 생명체를 만들어 그들에게 행성을 내어 주고, 자신들은 행성 그 자체가 되어 살아간다. 세계를 빚었다는 신화는 이 일을 두고 하는 말이다.</p></div>
+        <div class="inst"><b>아이</b><p>그들이 만든 단 하나의 생명. 아이가 어둠에 가 있는 동안 존재들은 대지가 되었다. 아이는 버려진 것이 아니라 세계를 물려받았지만, 끝내 그것을 알지 못했다.</p></div>
+        <div class="inst"><b>하얀 책</b><p>어둠의 중심에 닿기 직전, 아이와 동행하던 존재가 스스로 책이 되어 그 자리에 놓였다. 아이가 책을 처음 보고도 익숙하다고 느낀 건 그 때문이다. 계약의 근원이며, 그 존재를 닮은 사람을 계약자로 고른다.</p></div>
+        <div class="inst"><b>이름 모를 무언가</b><p>하얀 세계에는 없던 살과 피, 썩고 자라는 것. 아이가 그것을 대지에 묻자, 그 자리에서 색이 있고 언젠가 죽는 생명들이 퍼져 나갔다. 흑마술은 이 힘을 거꾸로 쓰는 기술이다.</p></div>
       </div>
     </div>
-    <div class="sec"><div class="k">두 개의 읽기<span class="en">Two Readings</span></div>
-      <div class="rows">
-        <div class="row"><span class="rk">제국 국교</span><span class="rv">하얀 존재를 신으로 섬기는 순백 교리<sup class="h">*</sup>. 흑은 더러운 것이고, 아이는 신을 떠난 죄인이다.</span></div>
-        <div class="row"><span class="rk">그레이스 에덴</span><span class="rv">'에덴'은 존재들이 대지가 되기 전의 하얀 정원. 제단은 신이 아니라 홀로 남겨진 아이를 기린다. 그래서 제국에게는 이단이다.</span></div>
+    <div class="wblk"><div class="wh"><span class="wk">두 개의 읽기</span><span class="we">Two Readings</span></div>
+      <div class="facs">
+        <div class="fac"><p class="fq">“흑은 더러운 것이고, 아이는 신을 떠난 죄인이다.”</p><div class="fm"><b>제국 국교</b><span>하얀 존재를 신으로 섬긴다</span></div><p class="fd">국교는 하얀 존재들을 신으로 섬기는 순백의 교리다.<sup class="h">*</sup> 흰 것은 거룩하고 검은 것은 버려진 것이라 가르치며, 신화 속 아이를 신의 품을 떠나 어둠으로 간 죄인으로 그린다.</p></div>
+        <div class="fac" style="border-left-color:var(--blue)"><p class="fq">“아이는 버려진 것이 아니라, 세계를 물려받았다.”</p><div class="fm"><b>그레이스 에덴</b><span>홀로 남겨진 아이를 기린다</span></div><p class="fd">‘에덴’은 존재들이 대지가 되기 전의 하얀 정원을 뜻한다. 제단은 신이 아니라 홀로 남겨진 아이를 기리기 때문에, 제국에게는 이단이다.</p></div>
       </div>
     </div>
   </div>
@@ -1645,30 +1694,30 @@ svg.focus .node:not(.hit){opacity:.2}
   </div></div>
   <div class="wrap">
     <div class="grid" id="grid" style="padding-top:8px;padding-bottom:44px"></div>
-    <div class="sec"><div class="k">멜리사와 델로아<span class="en">Melissa &amp; Delloa</span></div>
-      <div>
-        <p class="quote">이름을 준 사람과, 그 이름으로 사는 사람. 피 한 방울 안 섞였는데 쌍둥이처럼 닮았고, 입술의 같은 자리에 같은 흉터가 있다<sup class="h">*</sup>.</p>
-        <div class="mirror" style="margin:24px 0">
-      <div>그는 그녀의 눈을 되돌리지 못한다</div>
-      <div>그녀는 그에게 인생을 돌려주지 못한다</div>
-    </div>
-        <ol class="steps">
-        <li><span class="n">I</span><div><h4>숲에서 붙인 이름</h4><p>9세와 11세. 이름 없는 소년에게 이름이 생긴 날.</p></div></li>
-        <li><span class="n">II</span><div><h4>1년의 냉전</h4><p>그녀가 가져야 할 관료 자격을 그가 반년 만에 따냈다.</p></div></li>
-        <li><span class="n">III</span><div><h4>대리 출석</h4><p>멜리사가 쓰러진 날, 닮은 얼굴로 베니 앞에 대신 나간 델로아. "'제가' 마음에 드실 겁니다."</p></div></li>
-        <li><span class="n">IV</span><div><h4>결혼하라는 잔소리</h4><p>"나 말고 네 인생을 살아." 그녀는 그의 마음을 알고 있다.</p></div></li>
+  </div>
+  <div class="wrap wpage">
+    <div class="wblk"><div class="wh"><span class="wk">멜리사와 델로아</span><span class="we">Melissa &amp; Delloa</span></div>
+      <div class="duo2">
+        <button class="dp nlink3" type="button" data-id="melissa"><span class="dpi" style="background-image:url(img/melissa.jpg)"></span><b>멜리사</b><i>이름을 준 사람</i></button>
+        <div class="dmid"><p class="quote">피 한 방울 섞이지 않았는데 쌍둥이처럼 닮았고, 입술의 같은 자리에 같은 흉터가 있다.<sup class="h">*</sup> 서로를 가장 잘 알기에, 서로에게 가장 말하지 못하는 것이 많다.</p>
+          <div class="mirror"><div>그는 그녀의 눈을 되돌리지 못한다</div><div>그녀는 그에게 인생을 돌려주지 못한다</div></div></div>
+        <button class="dp nlink3" type="button" data-id="delloa"><span class="dpi" style="background-image:url(img/delloa.jpg)"></span><b>델로아</b><i>그 이름으로 사는 사람</i></button>
+      </div>
+      <ol class="stp4">
+        <li class="stp"><span class="sn">I</span><h4>숲에서 붙인 이름</h4><small>9세와 11세</small><p>이름도 성도 없던 소년에게 멜리사가 ‘델로아’라는 이름을 지어 준 날. 그날부터 그는 그 이름으로만 산다.</p></li>
+        <li class="stp"><span class="sn">II</span><h4>1년의 냉전</h4><small>17세와 19세</small><p>그녀가 6년을 떨어진 관료 시험을 그는 반년 만에 붙었다. 축하해야 할 일이 둘 사이에 1년의 침묵을 만들었다.</p></li>
+        <li class="stp"><span class="sn">III</span><h4>대리 출석</h4><small>첫 만남</small><p>멜리사가 쓰러진 날, 닮은 얼굴로 베니 앞에 대신 나간 델로아. “‘제가’ 마음에 드실 겁니다.” 그 약혼녀가 델로아라는 걸 베니만 알아챘다.</p></li>
+        <li class="stp"><span class="sn">IV</span><h4>결혼하라는 잔소리</h4><small>지금</small><p>“나 말고 네 인생을 살아.” 그녀는 그의 마음을 알면서도 결혼하라고 등을 떠민다. 그는 그 말에 한 번도 대답하지 않았다.<sup class="h">*</sup></p></li>
       </ol>
-      </div>
     </div>
-    <div class="sec"><div class="k">약혼자 다섯<span class="en">The Five</span></div>
-      <div>
-        <p>약혼은 사실상 스카우트다. 델로아가 고른 다섯은 모두 가문에서 밀려나 자리가 없던 아이들이었다.</p>
-        <div class="rows">
-        <div class="row"><span class="rk">고른 기준</span><span class="rv">자기처럼 이름이나 자리가 없는 아이들</span></div>
-        <div class="row"><span class="rk">약혼 순서</span><span class="rv">라리드, 요헨, 에스더, 유리오, 베니<sup class="h">*</sup></span></div>
-        <div class="row"><span class="rk">졸업 후</span><span class="rv">에스더는 공무, 요헨과 라리드는 제단, 베니와 유리오는 북부의 무력을 맡는다</span></div>
-        <div class="row"><span class="rk">표기</span><span class="rv">'약혼자'로 통일. '5명의 남편'은 세간이 비꼬는 말</span></div>
-      </div>
+    <div class="wblk"><div class="wh"><span class="wk">약혼자 다섯</span><span class="we">The Five</span></div>
+      <p class="lead">약혼이라 부르지만 실은 스카우트에 가깝다. 델로아가 직접 고른 다섯은 모두 가문에서 밀려나 설 자리가 없던 아이들이었다. 그레이스가는 그들에게 자리를 주고, 그들은 북부에 손과 힘을 보탠다.</p>
+      <div class="five"><button class="fv nlink3" type="button" data-id="larid"><span class="fn">01</span><span class="fvi" style="background-image:url(img/larid.jpg)"></span><b>라리드</b></button><button class="fv nlink3" type="button" data-id="jochen"><span class="fn">02</span><span class="fvi" style="background-image:url(img/jochen.jpg)"></span><b>요헨</b></button><button class="fv nlink3" type="button" data-id="esther"><span class="fn">03</span><span class="fvi" style="background-image:url(img/esther.jpg)"></span><b>에스더</b></button><button class="fv nlink3" type="button" data-id="yurio"><span class="fn">04</span><span class="fvi" style="background-image:url(img/yurio.jpg)"></span><b>유리오</b></button><button class="fv nlink3" type="button" data-id="benny"><span class="fn">05</span><span class="fvi" style="background-image:url(img/benny.jpg)"></span><b>베니</b></button></div>
+      <p class="note2" style="margin:10px 0 0">약혼한 순서<sup class="h">*</sup></p>
+      <div class="tiles" style="margin-top:22px">
+        <div class="tile"><small>고른 기준</small><p>자기처럼 이름이나 자리가 없는 아이들. 델로아는 능력보다 ‘갈 곳이 없는가’를 먼저 보았다.</p></div>
+        <div class="tile"><small>졸업 후</small><p>에스더는 공작 대리 일을, 요헨과 라리드는 제단을, 베니와 유리오는 북부의 무력을 맡는다. 다섯 모두 북부에서 처음으로 자기 몫을 갖게 된다.</p></div>
+        <div class="tile dark"><small>표기</small><p>공식 표기는 ‘약혼자’. ‘다섯 남편’은 세간이 그레이스가를 비꼬아 부르는 말이다.</p></div>
       </div>
     </div>
   </div>
@@ -1699,24 +1748,8 @@ svg.focus .node:not(.hit){opacity:.2}
     <p class="verse">아홉 살의 숲에서
 스물아홉의 겨울까지.</p><p class="note2">멜리사의 나이를 기준으로 적는다.</p>
   </div></div>
-  <div class="wrap"><div class="agecalc" id="agecalc"><div class="ac-top"><span class="ac-l">시점 계산</span><span>멜리사가 <b id="acM">29</b>세일 때</span></div><input type="range" min="0" max="29" value="29" id="acR" aria-label="멜리사 나이"><div class="ac-list" id="acL"></div></div>
-  <div class="tbl"><table>
-    <thead><tr><th>나이</th><th>사건</th></tr></thead>
-    <tbody>
-      <tr><td class="y">9</td><td>남부 숲에서 이름 없는 소년(11세)을 만나 '델로아'라는 이름을 지어준다. 같은 날 둘 다 입술에 흉터가 생긴다<sup class="h">*</sup></td></tr>
-      <tr><td class="y">11</td><td>의식 날 하얀 책이 멜리사를 고른다. 전대 공작의 뒤를 잇기 위해 양녀로 입적, 부모와 절연</td></tr>
-      <tr><td class="y">12–16</td><td>북부와 남부로 떨어져 연락을 이어간다. 델로아는 멜리사의 후원으로 공부한다<sup class="h">*</sup></td></tr>
-      <tr><td class="y">14–20</td><td>시력 때문에 관료 시험 6년 낙방</td></tr>
-      <tr><td class="y">16</td><td>로잘린가 유리오(6세) 사고사. 가주가 흑마술로 되살린다<sup class="h">*</sup></td></tr>
-      <tr><td class="y">17</td><td>델로아(19세)가 반년 만에 합격하고 1년 냉전. 베니(7세)가 남보다 일찍 심장이 생기고, 맹수 집안에서 토끼 판정</td></tr>
-      <tr><td class="y">18</td><td>델로아가 공작 대리를 자처하며 공작저에 들어온다. 약혼자 다섯과 차례로 약혼, 마지막은 베니(8세). 일찍 묶어 두어 집안끼리 결속을 깨지 못하게 했다</td></tr>
-      <tr><td class="y">20</td><td>진짜 멜리사가 비서 델로아와 함께 베니를 찾아간다</td></tr>
-      <tr><td class="y">21</td><td>공작위와 보호령을 잇는다. 델로아를 공작 대리로 두는 조건<sup class="h">*</sup></td></tr>
-      <tr><td class="y">22</td><td>제단과 고아원 설립, 온실과 지열 난방망 공사 시작<sup class="h">*</sup></td></tr>
-      <tr><td class="y">27</td><td>북부가 핵심 생산지가 된다. 그 대가로 시력을 완전히 잃는다<sup class="h">*</sup></td></tr>
-      <tr><td class="y">29</td><td>현재. 약혼자들은 졸업 직전, 제국의 견제는 심해지는 중이며, 델로아는 결혼하라고 혼나는 중</td></tr>
-    </tbody>
-  </table></div></div>
+  <div class="wrap wpage"><div class="agecalc" id="agecalc"><div class="ac-top"><span class="ac-l">시점 계산</span><span>멜리사가 <b id="acM">29</b>세일 때</span></div><input type="range" min="0" max="29" value="29" id="acR" aria-label="멜리사 나이"><div class="ac-list" id="acL"></div></div>
+  <ol class="tl"><li class="era"><span>숲</span></li><li class="ev" data-a="9" data-b="9"><div class="ey"><b>9</b><small>델로아 11</small></div><div class="eb"><h4>숲에서 붙인 이름</h4><p class="tl-ev">남부의 숲에서 이름 없는 소년(11세)을 만난다. 멜리사는 그 자리에서 소년에게 ‘델로아’라는 이름을 지어 주고, 같은 날 둘은 입술의 같은 자리에 흉터를 얻는다.<sup class="h">*</sup></p></div></li><li class="ev" data-a="11" data-b="11"><div class="ey"><b>11</b><small>델로아 13</small></div><div class="eb"><h4>하얀 책의 선택</h4><p class="tl-ev">열한 번째 생일의 의식 날, 하얀 책이 멜리사를 계약자로 고른다. 전대 그레이스 공작의 뒤를 잇기 위해 양녀로 입적되고, 친부모와는 연을 끊는다. 멜리사는 자신이 팔려 갔다고 믿는다.</p></div></li><li class="era"><span>떨어진 시간</span></li><li class="ev" data-a="12" data-b="16"><div class="ey"><b>12–16</b><small>델로아 14–18</small></div><div class="eb"><h4>편지로 이어진 사이</h4><p class="tl-ev">멜리사는 북부로 가고 델로아는 남부에 남아, 편지로 연락을 이어 간다. 델로아는 멜리사의 후원을 받아 공부하며 관료의 길을 준비한다.<sup class="h">*</sup></p></div></li><li class="ev" data-a="14" data-b="20"><div class="ey"><b>14–20</b><small>델로아 16–22</small></div><div class="eb"><h4>여섯 번의 낙방</h4><p class="tl-ev">계약의 대가로 시력이 흐려지면서 멜리사는 관료 시험에 6년 내리 떨어진다. 보호령을 직접 맡으려면 반드시 필요한 자격이었다.</p></div></li><li class="ev" data-a="16" data-b="16"><div class="ey"><b>16</b><small>델로아 18</small></div><div class="eb"><h4>되살아난 아이</h4><p class="tl-ev">로잘린가의 유리오(6세)가 사고로 죽는다. 가주는 금기인 흑마술로 아이를 되살리고, 그 비밀을 덮느라 가세가 기울기 시작한다.<sup class="h">*</sup></p></div></li><li class="ev" data-a="17" data-b="17"><div class="ey"><b>17</b><small>델로아 19</small></div><div class="eb"><h4>반년 만의 합격, 토끼 판정</h4><p class="tl-ev">델로아(19세)가 관료 시험에 반년 만에 합격한다. 그녀가 가져야 할 자격을 그가 먼저 따낸 일로, 둘은 1년 동안 말을 섞지 않는다. 같은 해 크라우스가의 베니(7세)는 남보다 일찍 심장이 생기지만, 맹수 집안에서 토끼 판정을 받는다.</p></div></li><li class="era"><span>공작저</span></li><li class="ev" data-a="18" data-b="18"><div class="ey"><b>18</b><small>델로아 20</small></div><div class="eb"><h4>공작저에 들어오다</h4><p class="tl-ev">델로아가 공작 대리를 자처하며 공작저에 들어온다. 그가 고른 약혼자 다섯과 차례로 약혼하고, 마지막은 여덟 살의 베니였다. 일찍 묶어 두어 가문끼리의 결속을 깨지 못하게 하려는 셈이었다.</p></div></li><li class="ev" data-a="20" data-b="20"><div class="ey"><b>20</b><small>델로아 22</small></div><div class="eb"><h4>진짜 약혼녀</h4><p class="tl-ev">첫 만남에 대신 나갔던 사람이 델로아였다는 게 드러난 뒤, 진짜 멜리사가 비서 델로아와 함께 베니를 다시 찾아간다.</p></div></li><li class="ev" data-a="21" data-b="21"><div class="ey"><b>21</b><small>델로아 23</small></div><div class="eb"><h4>공작위를 잇다</h4><p class="tl-ev">멜리사가 공작위와 보호령을 정식으로 잇는다. 관료 자격이 없는 그녀를 대신해, 델로아를 공작 대리로 둔다는 조건이 붙었다.<sup class="h">*</sup></p></div></li><li class="era"><span>북부를 세우다</span></li><li class="ev" data-a="22" data-b="22"><div class="ey"><b>22</b><small>델로아 24</small></div><div class="eb"><h4>제단을 세우다</h4><p class="tl-ev">그레이스 에덴 제단과 고아원을 세우고, 눈 속에서 약초를 키울 온실과 지열 난방망 공사를 시작한다.<sup class="h">*</sup></p></div></li><li class="ev" data-a="27" data-b="27"><div class="ey"><b>27</b><small>델로아 29</small></div><div class="eb"><h4>북부의 봄, 사라진 빛</h4><p class="tl-ev">북부가 제국의 핵심 약재 생산지로 자리 잡는다. 그 대가로 멜리사는 시력을 완전히 잃지만, 이 사실을 아는 사람은 거의 없다.<sup class="h">*</sup></p></div></li><li class="era"><span>지금</span></li><li class="ev" data-a="29" data-b="29"><div class="ey"><b>29</b><small>델로아 31</small></div><div class="eb"><h4>현재</h4><p class="tl-ev">약혼자 다섯은 졸업을 앞두고 있고, 제국의 견제는 날로 심해진다. 델로아는 오늘도 결혼하라는 잔소리를 듣는다.</p></div></li></ol></div>
 </section>
 
 <section class="page" id="story" data-n="06" data-ko="본편과 결말" data-en="Story &amp; Endings">
@@ -1726,37 +1759,35 @@ svg.focus .node:not(.hit){opacity:.2}
     <p class="verse">하얀 존재들은 세계를 주고 사라졌다.
 그들을 닮은 그녀는, 같은 길을 걸을까.</p>
   </div></div>
-  <div class="wrap">
-    <div class="sec" style="border-top:0;padding-top:48px"><div class="k">막아서는 이들<span class="en">Those Who Stand Against</span></div>
-      <div class="rows">
-        <div class="row"><span class="rk">세베린 하르트만</span><span class="rv">새로 부임한 북부감찰원장, 델로아의 상관. 멜리사를 없애기보다 "혼자서는 북부를 못 버틴다"는 걸 인정하게 만들려 한다.</span></div>
-        <div class="row"><span class="rk">이단심문관</span><span class="rv">오스발트 렌.<sup class="h">*</sup> 국교가 북부로 보낸 이단심문관으로, 제단을 사교로 규정하러 온다. 예의 바르고 차분하지만 자기 신앙을 한 번도 의심해 본 적 없는 사람이다. 황실이 그레이스가에 대해 숨기는 비밀은 그도 모른다.</span></div>
+  <div class="wrap wpage">
+    <div class="wblk"><div class="wh"><span class="wk">막아서는 이들</span><span class="we">Those Who Stand Against</span></div>
+      <div class="facs">
+        <div class="fac"><p class="fq">“혼자서는 북부를 버틸 수 없다는 걸, 당신 입으로 인정하게 하겠습니다.”<sup class="h">*</sup></p><div class="fm"><b>세베린 하르트만</b><span>북부감찰원장 · 델로아의 상관</span></div><p class="fd">새로 부임한 북부감찰원장. 멜리사를 끌어내리기보다, 그녀 스스로 혼자서는 북부를 버틸 수 없다고 인정하게 만들려 한다. 적이지만 틀린 말은 하지 않는 사람이다.<sup class="h">*</sup></p></div>
+        <div class="fac"><p class="fq">“신을 기리지 않는 제단은 제단이 아닙니다.”<sup class="h">*</sup></p><div class="fm"><b>오스발트 렌<sup class="h">*</sup></b><span>국교의 이단심문관</span></div><p class="fd">국교가 북부로 보낸 이단심문관으로, 제단을 사교로 규정하러 온다. 예의 바르고 차분하지만 자기 신앙을 한 번도 의심해 본 적 없는 사람이다. 황실이 그레이스가에 대해 숨기는 비밀은 그도 모른다.</p></div>
       </div>
     </div>
-    <div class="sec"><div class="k">갈림길까지<span class="en">Before the Fork</span></div>
-      <ol class="steps">
-        <li><span class="n">I</span><div><h4>졸업</h4><p>약혼자 다섯이 졸업하고 북부로 온다. 같은 봄, 세베린이 부임하고 국교는 심문관을 보낸다. 멜리사는 늘 그랬듯 혼자 막으려 한다.</p></div></li>
-        <li><span class="n">II</span><div><h4>균열</h4><p>유리오의 흑마술 냄새, 베니의 아종 의심, 라리드의 신앙 갈등, 쓰러지는 요헨, 델로아가 감춰온 것을 보게 되는 에스더. 멜리사는 힘을 더 쓰고, 시력 다음 대가가 시작된다<sup class="h">*</sup>.</p></div></li>
-        <li><span class="n">III</span><div><h4>보고서</h4><p>세베린이 델로아에게 마지막 보고를 요구한다. 올리면 제단이 끝나고, 거부하면 그는 반역자가 된다. 여기서 이야기가 갈라진다.</p></div></li>
+    <div class="wblk"><div class="wh"><span class="wk">갈림길까지</span><span class="we">Before the Fork</span></div>
+      <ol class="acts">
+        <li><span class="an">I</span><div class="stp"><h4>졸업 <i>Spring</i></h4><p>약혼자 다섯이 졸업하고 북부로 온다. 같은 봄, 세베린이 북부감찰원장으로 부임하고 국교는 심문관을 보낸다. 멜리사는 늘 그랬듯, 이 모든 것을 혼자 막아 내려 한다.</p></div></li>
+        <li><span class="an">II</span><div class="stp"><h4>균열 <i>Cracks</i></h4><p>유리오에게서 나는 흑마술의 냄새, 베니에게 쏠리는 아종 의심, 국교와 제단 사이에서 흔들리는 라리드의 신앙, 힘을 쓰다 쓰러지는 요헨, 그리고 델로아가 감춰 온 것을 보게 되는 에스더. 틈이 벌어질수록 멜리사는 힘을 더 쓰고, 시력 다음의 대가가 시작된다.<sup class="h">*</sup></p></div></li>
+        <li class="dk"><span class="an">III</span><div class="stp"><h4>보고서 <i>The Report</i></h4><p>세베린이 델로아에게 마지막 보고를 요구한다. 보고서를 올리면 제단이 끝나고, 거부하면 그는 반역자가 된다. 이야기는 여기서 갈라진다.</p></div></li>
       </ol>
     </div>
-    <div class="sec"><div class="k">결말<span class="en">Endings</span></div>
-      <div>
-        <p class="g small" style="font-size:13px">갈림길은 둘. 델로아가 보고서를 올리는가, 멜리사가 혼자 쥐던 것을 나누는가.</p>
+    <div class="wblk"><div class="wh"><span class="wk">결말</span><span class="we">Endings</span><span class="wn">갈림길은 둘</span></div>
+      <p class="lead">델로아가 보고서를 올리는가. 멜리사가 혼자 쥐던 것을 나누는가. 두 갈림길이 만나는 네 자리에 네 개의 결말이 놓인다.</p>
         <div class="mx">
           <div class="h s blank"></div><div class="h">혼자 쥔다</div><div class="h">나눈다</div>
           <div class="s">보고 거부</div>
-          <div class="e rep"><span class="m">신화의 반복</span><h4>하얀 존재의 길</h4><p>끝까지 혼자 버티다 감각을 전부 잃고 북부의 땅이 된다. 북부는 살지만 그녀는 없다. 델로아만 홀로 남는다.</p></div>
-          <div class="e"><span class="m">반복을 끊는다</span><h4>나눔</h4><p>눈이 안 보인다는 걸 밝히고 권한을 약혼자들에게 나눈다. 델로아는 직함 없이 곁에 남는다.</p></div>
+          <div class="e rep"><span class="m">신화의 반복</span><h4>하얀 존재의 길</h4><p>끝까지 혼자 버티던 멜리사는 감각을 하나씩 모두 내주고, 끝내 북부의 땅이 된다. 북부는 살아남지만 그녀는 없다. 신화 속 아이처럼, 델로아만 홀로 남는다.</p></div>
+          <div class="e"><span class="m">반복을 끊는다</span><h4>나눔</h4><p>멜리사가 눈이 보이지 않는다는 사실을 밝히고, 혼자 쥐던 권한을 약혼자들에게 나눈다. 델로아는 공작 대리라는 직함 없이, 그저 그녀 곁에 남는다.</p></div>
           <div class="s">보고</div>
-          <div class="e rep"><span class="m">아이만 바뀐 반복</span><h4>사라진 공작</h4><p>제단이 해체되고 멜리사는 사라진다. 하얀 책은 신이 정해둔 다음 후보 루헨에게. 델로아는 그녀가 돌아올 집을 지킨다.</p></div>
-          <div class="e"><span class="m">아이가 세운 세계</span><h4>반역</h4><p>델로아가 보고서에 진실을 전부 써서 황실과 국교의 거래를 터뜨린다. 북부는 제국에서 떨어져 나온다.</p></div>
+          <div class="e rep"><span class="m">아이만 바뀐 반복</span><h4>사라진 공작</h4><p>제단이 해체되고 멜리사는 자취를 감춘다. 하얀 책은 신이 정해 둔 다음 후보 루헨에게 넘어가고, 델로아는 그녀가 돌아올지 모를 집을 지킨다.</p></div>
+          <div class="e"><span class="m">아이가 세운 세계</span><h4>반역</h4><p>델로아가 보고서에 진실을 전부 적어 황실과 국교 사이의 거래를 터뜨린다. 북부는 제국에서 떨어져 나와, 아이가 세운 세계가 된다.</p></div>
         </div>
         <div class="mxl"><span><i style="background:var(--soft)"></i>신화가 반복되는 결말</span><span><i></i>신화를 끊는 결말</span></div>
-        <div class="cols" style="margin-top:30px">
-          <div><h4>이름 붙은 관계</h4><p>나눔 위에서, 델로아가 처음으로 자기 것을 원할 때. 그가 마음을 말하고, 그녀는 자기도 무언가를 원해도 되는 사람이라는 걸 받아들인다.</p></div>
-          <div><h4>약혼자 갈래<sup class="h">*</sup></h4><p>나눔 위에서, 약혼자 한 명의 '원하는 것'이 채워지는 개별 결말. 웹게임이라면 루트가 될 자리.</p></div>
-        </div>
+      <div class="insts g2" style="margin-top:30px">
+        <div class="inst"><b>이름 붙은 관계</b><p>나눔의 결말 위에서, 델로아가 처음으로 자기 것을 원할 때. 그가 마음을 말하고, 그녀는 자기도 무언가를 원해도 되는 사람이라는 걸 받아들인다.</p></div>
+        <div class="inst"><b>약혼자 갈래<sup class="h">*</sup></b><p>나눔의 결말 위에서, 약혼자 한 명의 ‘원하는 것’이 채워지는 개별 결말. 웹게임으로 만든다면 각자의 루트가 될 자리다.</p></div>
       </div>
     </div>
   </div>
@@ -1782,19 +1813,19 @@ svg.focus .node:not(.hit){opacity:.2}
 <dialog id="dlg" aria-labelledby="dlgName"></dialog>
 
 <script>
-const C=[{"id":"melissa","name":"멜리사","full":"그레이스 포르텐 릴리","ro":"Grace Forten Lili","age":29,"h":166,"line":"모두를 지키면서, 자기만은 빼놓는 사람","role":"그레이스 공작 · 제단 교단장","house":"그레이스 공작가 · 구귀족 (양녀)","ability":"녹음의 빛 — 식물(창조계) · 하얀 책의 계약자","outer":"자비롭고 포용적이다. 아무것도 안 하는 것처럼 보인다.","inner":"누구보다 열심히 일한다. 힘든 일을 싫어하면서도 전부 견딘다.","want":"아무도 버려지지 않는 곳","flaw":"그 '아무도'에 자기는 넣지 않는다","facts":["본명 로렐라이 멜리사. 남부 구귀족 로렐라이가 출신","신화 속 아이를 기른 하얀 존재와 닮아, 11세에 하얀 책에 선택됐다","전대 공작의 뒤를 잇기 위해 그레이스가에 양녀로 들어갔다. 친가와는 절연했고, 팔려 갔다고 믿는다","계약의 대가로 시력을 잃었다. 지금은 완전히 보이지 않는다","관료 시험에 6년 내리 떨어졌다","델로아의 마음을 알면서도 결혼하라고 잔소리한다"],"likes":["바닐라 아이스크림","사람들"],"dislikes":["힘든 일","맵고 짠 음식"]},
-{"id":"delloa","name":"델로아","full":"델로아 프로이덴","ro":"Delloa Freuden","age":31,"h":188,"line":"이름을 받은 날부터, 그 이름으로만 사는 사람","role":"북부감찰원 · 그레이스 공작 대리","house":"프로이덴 · 국가 귀속 작위 (신귀족)","ability":"시간 되돌리기(조작계)","outer":"예리하고 침착하며 무심하다. 늘 피곤해 보인다.","inner":"이름을 준 사람에게 그 이상을 바라면 안 된다고 믿는다.","want":"멜리사가 스스로를 버리지 않는 것","flaw":"자기 인생이 없다","facts":["빈민가에서 어머니에게 학대받으며 이름 없이 자랐다","이름도 성도 멜리사가 지어 줬다*","능력이 살아 있는 것에는 통하지 않아, 그녀의 눈은 되돌리지 못한다*","오래 알고 지낸 사이라 공작 대리를 자처했다. 감찰원 공무원으로서 공작저 감시도 겸한다","관료 자격을 갖춰, 그녀 대신 보호령을 맡을 조건을 채운다","제국은 그를 공작저에 심은 눈으로 보지만, 정보는 반대로 흐른다","약혼자 다섯을 직접 골라 데려왔다"],"likes":["멜리사와 관련된 모든 것"],"dislikes":["멜리사를 싫어하는 모든 것"]},
-{"id":"benny","name":"베니","full":"크라우스 레이 베니","ro":"Krause Rei Benny","age":19,"h":193,"line":"깔보이지 않으려고, 가장 높이 서려는 아이","role":"다섯 번째 약혼자 · 졸업반","house":"크라우스 후작가 · 구귀족","ability":"토끼(변신계)","outer":"거만하고 남보다 우위에 서는 걸 좋아한다.","inner":"한 번이라도 누군가에게 먼저 선택받고 싶다.","want":"아무도 자기를 깔보지 못하는 높은 자리","flaw":"","facts":["7세, 남보다 일찍 심장이 생겼다. 대대로 맹수로 변하는 집안이라 당연히 그럴 줄 알았는데, 판정은 토끼였다","그날부터 집에서 없는 사람 취급을 받았다","마력이 넘쳐 늘 귀를 내놓고 다닌다. '아종스럽다'는 말을 가장 많이 듣는다","첫 만남의 '약혼녀'가 델로아라는 걸 혼자 알아챘다","같은 처지라서 유리오가 더 싫다"],"likes":["멜리사님","높은 자리","전투"],"dislikes":["깔보는 사람","본가","유리오"]},
-{"id":"yurio","name":"유리오","full":"로잘린 페르 유리오","ro":"Rosaline Per Yurio","age":19,"h":182,"line":"한 번 죽었다 살아난 뒤로, 살아 있어도 되는지 묻는 아이","role":"네 번째 약혼자","house":"로잘린 후작가 · 구귀족","ability":"블러디 메리 — 혈액(조작계)","outer":"그레이스가의 이름을 업고 권세를 부리는 도련님으로 보인다.","inner":"자기를 살려 놓고 숨기기만 한 가족을 혐오한다.","want":"제대로 살아 있는 것","flaw":"","facts":["6세에 죽었고, 가주가 흑마술로 되살렸다*","멜리사는 그 비밀을 알고도 받아 줬다","트릴베리 주스를 밥처럼 마신다"],"likes":["그나마 멜리사"],"dislikes":["가문 사람들","베니"]},
-{"id":"esther","name":"에스더","full":"페릴른 페트론 에스더","ro":"Periln Petron Esther","age":19,"h":180,"line":"말 대신 곡을 쓰는 모범생","role":"약혼자 · 공작 대리 후임","house":"에스더 백작가 · 신귀족 (차남)","ability":"보이지 않는 손(조작계)","outer":"생긴 건 양아치인데, 알고 보면 모범생이다.","inner":"말로 못 하는 걸 곡과 가사로 쓴다.","want":"조용히, 자기 방식대로 인정받는 것","flaw":"","facts":["멜리사는 그의 곡을 끝까지 들어 준 유일한 사람이다*","졸업하면 델로아에게서 공작 대리 일을 물려받는다"],"likes":["소설","작사","작곡"],"dislikes":["시끄러운 사람"]},
-{"id":"jochen","name":"요헨","full":"요헨 카르니에리","ro":"Jochen Carnieri","age":19,"h":177,"line":"자기를 깎아서라도 고쳐 주려는 아이","role":"약혼자 · 신학부","house":"카르니에리 자작가 · 신귀족 (외동)","ability":"이카로스 — 치유(창조계)","outer":"눈물 많고 유약해서 약혼자들 사이의 욕받이다.","inner":"고칠 수 있는데 안 고치는 것이 가장 무섭다.","want":"아무도 아프지 않은 것","flaw":"","facts":["깃털을 쓸수록 자기 체력이 깎인다*","멜리사의 눈을 고치려 하지만, 계약의 대가라 고쳐지지 않는다","신학부 동기 라리드와 친구다"],"likes":["조용한 곳","멜리사의 화원"],"dislikes":["폭력적인 사람"]},
-{"id":"larid","name":"라리드","full":"라리드 슈페틀라","ro":"Larid Shpetla","age":20,"h":210,"line":"누구에게나 호감을 사서, 아무것도 믿지 못하는 맏이","role":"약혼자 맏이 · 신학부","house":"슈페틀라 남작가 · 신귀족 (상인 출신)","ability":"친화(조작계)","outer":"거구인데 온화하다. 약혼자들의 정신적 지주다.","inner":"능력 때문에 사람들의 호감이 진심인지 믿지 못한다.","want":"진심으로 믿을 수 있는 것","flaw":"","facts":["국교를 배우면서 이단의 제단으로 가야 하는 처지","친화가 유일하게 통하지 않는 사람이 델로아다*","유약한 요헨 곁을 지키는 친구"],"likes":["잔잔한 것","동물"],"dislikes":["과격한 사람"]},
-{"id":"ruhen","name":"루헨","full":"루헨","ro":"Ruhen","age":17,"h":158,"line":"추위를 모르는 여우 아이","role":"제단 고아원의 고아","house":"","ability":"여우(변신계) · 계약자","outer":"멜리사 앞에서만 웃는다.","inner":"멜리사가 자기만 봐 주기를 바란다. 그녀 곁에 다른 사람이 서 있는 것을 견디지 못한다.*","want":"멜리사의 곁에 끝까지 남는 것*","flaw":"","facts":["멜리사를 광신할 정도로 따른다","계약의 대가로 추위를 못 느낀다. 그래서 눈 내린 산을 좋아한다"],"likes":["멜리사","눈 내린 산"],"dislikes":["멜리사 곁의 사람들 전부"]}];
+const C=[{"id":"melissa","name":"멜리사","full":"그레이스 포르텐 릴리","ro":"Grace Forten Lili","age":29,"h":166,"line":"모두를 지키면서, 자기만은 빼놓는 사람","role":"그레이스 공작 · 제단 교단장","house":"그레이스 공작가 · 구귀족 (양녀)","ability":"녹음의 빛 — 식물(창조계) · 하얀 책의 계약자","outer":"자비롭고 포용적이다. 아무것도 안 하는 것처럼 보인다.","inner":"누구보다 열심히 일한다. 힘든 일을 싫어하면서도 전부 견딘다.","want":"아무도 버려지지 않는 곳","flaw":"그 '아무도'에 자기는 넣지 않는다","facts":["본명 로렐라이 멜리사. 남부 구귀족 로렐라이가 출신","신화 속 아이를 기른 하얀 존재와 닮아, 11세에 하얀 책에 선택됐다","전대 공작의 뒤를 잇기 위해 그레이스가에 양녀로 들어갔다. 친가와는 절연했고, 팔려 갔다고 믿는다","계약의 대가로 시력을 잃었다. 지금은 완전히 보이지 않는다","관료 시험에 6년 내리 떨어졌다","델로아의 마음을 알면서도 결혼하라고 잔소리한다"],"likes":["바닐라 아이스크림","사람들"],"dislikes":["힘든 일","맵고 짠 음식"],"bio":"남부의 구귀족 로렐라이가에서 태어나, 열한 살에 하얀 책의 선택을 받고 그레이스가의 양녀가 되었다. 눈보라뿐이던 북부를 약재의 땅으로 바꾼 공작이자, 고아원과 제단을 세운 교단장이다. 누구에게나 다정하지만 정작 자기 자신은 그 다정함에서 늘 빼놓는다. 계약의 대가로 시력을 잃은 지금도, 그 사실을 아는 사람은 거의 없다."},
+{"id":"delloa","name":"델로아","full":"델로아 프로이덴","ro":"Delloa Freuden","age":31,"h":188,"line":"이름을 받은 날부터, 그 이름으로만 사는 사람","role":"북부감찰원 · 그레이스 공작 대리","house":"프로이덴 · 국가 귀속 작위 (신귀족)","ability":"시간 되돌리기(조작계)","outer":"예리하고 침착하며 무심하다. 늘 피곤해 보인다.","inner":"이름을 준 사람에게 그 이상을 바라면 안 된다고 믿는다.","want":"멜리사가 스스로를 버리지 않는 것","flaw":"자기 인생이 없다","facts":["빈민가에서 어머니에게 학대받으며 이름 없이 자랐다","이름도 성도 멜리사가 지어 줬다*","능력이 살아 있는 것에는 통하지 않아, 그녀의 눈은 되돌리지 못한다*","오래 알고 지낸 사이라 공작 대리를 자처했다. 감찰원 공무원으로서 공작저 감시도 겸한다","관료 자격을 갖춰, 그녀 대신 보호령을 맡을 조건을 채운다","제국은 그를 공작저에 심은 눈으로 보지만, 정보는 반대로 흐른다","약혼자 다섯을 직접 골라 데려왔다"],"likes":["멜리사와 관련된 모든 것"],"dislikes":["멜리사를 싫어하는 모든 것"],"bio":"남부 빈민가에서 이름도 없이 자란 소년. 숲에서 만난 멜리사에게 이름을 받은 날부터, 그는 그 이름으로만 살아왔다. 지금은 북부감찰원의 관료이자 그레이스 공작 대리로, 제국의 감시자이면서 동시에 공작저의 방패다. 그녀에게 그 이상을 바라면 안 된다고 믿기에, 마음은 늘 말하지 않은 채 남겨 둔다."},
+{"id":"benny","name":"베니","full":"크라우스 레이 베니","ro":"Krause Rei Benny","age":19,"h":193,"line":"깔보이지 않으려고, 가장 높이 서려는 아이","role":"다섯 번째 약혼자 · 졸업반","house":"크라우스 후작가 · 구귀족","ability":"토끼(변신계)","outer":"거만하고 남보다 우위에 서는 걸 좋아한다.","inner":"한 번이라도 누군가에게 먼저 선택받고 싶다.","want":"아무도 자기를 깔보지 못하는 높은 자리","flaw":"","facts":["7세, 남보다 일찍 심장이 생겼다. 대대로 맹수로 변하는 집안이라 당연히 그럴 줄 알았는데, 판정은 토끼였다","그날부터 집에서 없는 사람 취급을 받았다","마력이 넘쳐 늘 귀를 내놓고 다닌다. '아종스럽다'는 말을 가장 많이 듣는다","첫 만남의 '약혼녀'가 델로아라는 걸 혼자 알아챘다","같은 처지라서 유리오가 더 싫다"],"likes":["멜리사님","높은 자리","전투"],"dislikes":["깔보는 사람","본가","유리오"],"bio":"맹수로 변하는 것을 자랑으로 삼는 크라우스가에서, 일곱 살에 토끼 판정을 받은 아이. 그날부터 집안에서 없는 사람처럼 지냈고, 그래서 누구보다 높은 자리를 원하게 되었다. 거만하고 날이 서 있지만, 속으로는 한 번이라도 누군가에게 먼저 선택받기를 바란다. 다섯 번째 약혼자로, 첫 만남의 ‘약혼녀’가 델로아였다는 걸 유일하게 알아챘다."},
+{"id":"yurio","name":"유리오","full":"로잘린 페르 유리오","ro":"Rosaline Per Yurio","age":19,"h":182,"line":"한 번 죽었다 살아난 뒤로, 살아 있어도 되는지 묻는 아이","role":"네 번째 약혼자","house":"로잘린 후작가 · 구귀족","ability":"블러디 메리 — 혈액(조작계)","outer":"그레이스가의 이름을 업고 권세를 부리는 도련님으로 보인다.","inner":"자기를 살려 놓고 숨기기만 한 가족을 혐오한다.","want":"제대로 살아 있는 것","flaw":"","facts":["6세에 죽었고, 가주가 흑마술로 되살렸다*","멜리사는 그 비밀을 알고도 받아 줬다","트릴베리 주스를 밥처럼 마신다"],"likes":["그나마 멜리사"],"dislikes":["가문 사람들","베니"],"bio":"여섯 살에 죽었다가, 가주의 흑마술로 다시 눈을 뜬 로잘린가의 아들. 살아 있어도 되는 것인지 스스로 확신하지 못한 채, 비밀을 숨기기 바쁜 가족을 혐오하며 자랐다. 겉으로는 그레이스가의 이름을 업은 거만한 도련님이지만, 비밀을 알고도 받아 준 멜리사에게만은 조금 무르다. 체온이 낮고 피가 쉽게 모자라 트릴베리 주스를 밥처럼 마신다."},
+{"id":"esther","name":"에스더","full":"페릴른 페트론 에스더","ro":"Periln Petron Esther","age":19,"h":180,"line":"말 대신 곡을 쓰는 모범생","role":"약혼자 · 공작 대리 후임","house":"에스더 백작가 · 신귀족 (차남)","ability":"보이지 않는 손(조작계)","outer":"생긴 건 양아치인데, 알고 보면 모범생이다.","inner":"말로 못 하는 걸 곡과 가사로 쓴다.","want":"조용히, 자기 방식대로 인정받는 것","flaw":"","facts":["멜리사는 그의 곡을 끝까지 들어 준 유일한 사람이다*","졸업하면 델로아에게서 공작 대리 일을 물려받는다"],"likes":["소설","작사","작곡"],"dislikes":["시끄러운 사람"],"bio":"생긴 건 양아치 같지만, 알고 보면 누구보다 성실한 모범생. 신흥 백작가의 차남이라 물려받을 것이 없어, 가문은 그를 그레이스가의 약혼자로 보냈다. 말로 하지 못하는 것을 곡과 가사로 쓰고, 그 곡을 끝까지 들어 준 사람은 멜리사뿐이었다.* 졸업하면 델로아에게서 공작 대리 일을 물려받는다."},
+{"id":"jochen","name":"요헨","full":"요헨 카르니에리","ro":"Jochen Carnieri","age":19,"h":177,"line":"자기를 깎아서라도 고쳐 주려는 아이","role":"약혼자 · 신학부","house":"카르니에리 자작가 · 신귀족 (외동)","ability":"이카로스 — 치유(창조계)","outer":"눈물 많고 유약해서 약혼자들 사이의 욕받이다.","inner":"고칠 수 있는데 안 고치는 것이 가장 무섭다.","want":"아무도 아프지 않은 것","flaw":"","facts":["깃털을 쓸수록 자기 체력이 깎인다*","멜리사의 눈을 고치려 하지만, 계약의 대가라 고쳐지지 않는다","신학부 동기 라리드와 친구다"],"likes":["조용한 곳","멜리사의 화원"],"dislikes":["폭력적인 사람"],"bio":"치유 능력을 가진 카르니에리가의 외동아들. 눈물이 많고 유약해서 약혼자들 사이에서 늘 놀림을 받지만, 다친 사람을 보면 자기 체력을 깎아서라도 고쳐 주려 한다. 멜리사의 눈을 고치려 몇 번이고 깃털을 쓰지만, 계약의 대가라 끝내 고쳐지지 않는다. 신학부 동기 라리드가 늘 그의 곁을 지킨다."},
+{"id":"larid","name":"라리드","full":"라리드 슈페틀라","ro":"Larid Shpetla","age":20,"h":210,"line":"누구에게나 호감을 사서, 아무것도 믿지 못하는 맏이","role":"약혼자 맏이 · 신학부","house":"슈페틀라 남작가 · 신귀족 (상인 출신)","ability":"친화(조작계)","outer":"거구인데 온화하다. 약혼자들의 정신적 지주다.","inner":"능력 때문에 사람들의 호감이 진심인지 믿지 못한다.","want":"진심으로 믿을 수 있는 것","flaw":"","facts":["국교를 배우면서 이단의 제단으로 가야 하는 처지","친화가 유일하게 통하지 않는 사람이 델로아다*","유약한 요헨 곁을 지키는 친구"],"likes":["잔잔한 것","동물"],"dislikes":["과격한 사람"],"bio":"상인 출신 슈페틀라가의 아들이자 약혼자들의 맏이. 2미터가 넘는 거구지만 누구보다 온화해서, 다섯 사이의 정신적 지주 노릇을 한다. 사람의 호감을 사는 ‘친화’ 능력 탓에, 남들이 보내는 호의가 진심인지 늘 의심한다. 그 능력이 통하지 않는 유일한 사람이 델로아라서, 오히려 그에게 묘한 믿음을 갖는다.*"},
+{"id":"ruhen","name":"루헨","full":"루헨","ro":"Ruhen","age":17,"h":158,"line":"추위를 모르는 여우 아이","role":"제단 고아원의 고아","house":"","ability":"여우(변신계) · 계약자","outer":"멜리사 앞에서만 웃는다.","inner":"멜리사가 자기만 봐 주기를 바란다. 그녀 곁에 다른 사람이 서 있는 것을 견디지 못한다.*","want":"멜리사의 곁에 끝까지 남는 것*","flaw":"","facts":["멜리사를 광신할 정도로 따른다","계약의 대가로 추위를 못 느낀다. 그래서 눈 내린 산을 좋아한다"],"likes":["멜리사","눈 내린 산"],"dislikes":["멜리사 곁의 사람들 전부"],"bio":"제단 고아원의 아이. 멜리사 앞에서만 웃고, 그녀를 광신에 가까울 만큼 따른다. 하얀 책과 계약한 대가로 추위를 느끼지 못해서, 남들이 꺼리는 눈 덮인 산을 오히려 좋아한다. 자신이 신이 정해 둔 다음 후보라는 사실은 아직 모른다.*"}];
 const byId=Object.fromEntries(C.map(c=>[c.id,c]));
 const esc=s=>String(s).replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
 const card=c=>`<button class="pc" data-id="${c.id}" aria-label="${esc(c.full)} 상세 보기"><div class="ph"><img src="img/${c.id}.jpg" alt="" loading="lazy"></div><span class="nm">${esc(c.full)}</span><span class="ro">${esc(c.ro)}</span></button>`;
 document.getElementById("grid").innerHTML=C.map(card).join("");
-const star=s=>esc(s).replace(/\*$/,'<sup class="h">*</sup>');
+const star=s=>esc(s).replace(/\*/g,'<sup class="h">*</sup>');
 const dlg=document.getElementById("dlg");
 const OLDNB=["melissa","benny","yurio"];
 const nameHTML=c=>{const w=c.full.split(" ");if(w.length<2)return`<b>${esc(c.full)}</b>`;const gi=OLDNB.includes(c.id)?w.length-1:0;return w.map((x,i)=>i===gi?`<b>${esc(x)}</b>`:esc(x)).join(" ")};
@@ -1803,6 +1834,7 @@ function openChar(id){const c=byId[id];if(!c)return;
  dlg.innerHTML=`<div class="dl"><div class="ph"><img src="img/${c.id}.jpg" alt="${esc(c.full)} 초상"></div><div class="bd">
  <div class="top"><div><div class="ro">${esc(c.ro)}</div><div class="nm" id="dlgName">${nameHTML(c)}</div></div><button class="x" id="dlgClose">CLOSE</button></div>
  <p class="line">${esc(c.line)}</p>
+ ${c.bio?`<p class="sheet-bio">${star(c.bio)}</p>`:""}
  <div class="spec">${spec.map(([k,v,w])=>`<div${w?' class="w"':''}><small>${k}</small>${esc(v)}</div>`).join("")}</div>
  <div class="dsec"><h5>성격</h5><div class="duo"><p><span>겉</span>${esc(c.outer)}</p>${c.inner?`<p><span>속</span>${star(c.inner)}</p>`:`<p><span>속</span><em style="color:var(--gray);font-style:normal">아직 정하지 않음</em></p>`}</div></div>
  ${c.want?`<div class="dsec"><h5>바라는 것</h5><p class="want">${star(c.want)}${c.flaw?`<br><em>그러나 — ${esc(c.flaw)}</em>`:""}</p></div>`:""}
@@ -2057,7 +2089,7 @@ else{const gate=document.getElementById("gate"),go=on=>{gate.classList.add("hide
 document.querySelectorAll("sup.h").forEach(x=>x.title="가설·제안");
 document.querySelectorAll("table.cardify").forEach(t=>{const hs=[...t.querySelectorAll("thead th")].map(th=>th.textContent);t.querySelectorAll("tbody tr").forEach(tr=>[...tr.children].forEach((td,i)=>td.dataset.label=hs[i]||""))});
 (function(){const nm2id={};C.forEach(c=>nm2id[c.name]=c.id);const re=new RegExp("("+Object.keys(nm2id).join("|")+")","g");
- document.querySelectorAll("#timeline td:not(.y), #story .steps p, #characters .steps p").forEach(root=>{
+ document.querySelectorAll("#timeline .tl-ev, #story .stp p, #characters .stp p").forEach(root=>{
   const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const ns=[];while(w.nextNode())ns.push(w.currentNode);
   ns.forEach(n=>{if(!re.test(n.nodeValue))return;re.lastIndex=0;const f=document.createDocumentFragment();let last=0,m;
    while((m=re.exec(n.nodeValue))){f.append(n.nodeValue.slice(last,m.index));const b=document.createElement("button");b.className="nlink";b.type="button";b.dataset.id=nm2id[m[1]];b.textContent=m[1];f.append(b);last=re.lastIndex}
@@ -2066,12 +2098,12 @@ document.addEventListener("click",e=>{const b=e.target.closest(".nlink");if(b)op
 document.addEventListener("click",e=>{const b=e.target.closest(".nlink2");if(b){openChar(b.dataset.id);dlg.querySelector(".bd").scrollTop=0}});
 
 document.querySelectorAll(".page").forEach(p=>{const w=p.querySelector(".head-c .wrap");if(w){const m=document.createElement("span");m.className="wm";m.setAttribute("aria-hidden","true");m.textContent=p.dataset.n;w.prepend(m)}});
-document.querySelectorAll("#timeline td.y").forEach(td=>{const t=td.textContent.trim();const d=t.split(/[–-]/).map(x=>parseInt(x)+2);if(d.every(n=>!isNaN(n)))td.insertAdjacentHTML("beforeend",`<small>델로아 ${d.join("–")}</small>`)});
+/* delloa ages rendered in markup */
 const GL={"두 번째 심장":"11세에 몸의 마나가 뭉쳐 생기는 보석 같은 심장. 능력의 근원.","아종":"두 번째 심장이 생길 때 능력이 몸에 드러난 사람. 날개·뿔·귀가 늘 보인다. 북부로 보내지며, 최북단 눈보라 너머에 모여 산다.","보호령":"북부. 그레이스가가 맡으며, 맡는 자는 제국 관료 자격이 있어야 한다.","공작 대리":"공작에게 관료 자격이 없을 때 대신 보호령을 맡는 자격자. 지금은 델로아.","계약자":"하얀 책과 계약한 사람. 힘이 커지는 대신 감각을 하나씩 내준다.","흑마술":"살과 피의 힘을 거꾸로 써서 죽은 몸을 일으키는 기술. 적발되면 가문이 끝난다.","하얀 책":"아이와 동행하던 하얀 존재가 변한 책. 계약의 근원.","국교":"하얀 존재를 신으로 섬기는 제국의 순백 교리.","제단":"그레이스 에덴 제단. 신이 아니라 홀로 남은 아이를 기리는 곳. 제국에게는 이단."};
 const glRe=new RegExp("("+Object.keys(GL).sort((a,b)=>b.length-a.length).join("|")+")");
 function glossify(root){const seen=new Set();const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>n.parentElement.closest(".gl,button,h5,small,.k,.rk,.lab,svg")?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT});const ns=[];while(w.nextNode())ns.push(w.currentNode);
  ns.forEach(n=>{let node=n,m;while(node&&(m=glRe.exec(node.nodeValue))){if(seen.has(m[1])){const rest=node.splitText(m.index+m[1].length);node=rest;continue}seen.add(m[1]);const mid=node.splitText(m.index);const after=mid.splitText(m[1].length);const sp=document.createElement("span");sp.className="gl";sp.tabIndex=0;sp.dataset.g=m[1];sp.textContent=m[1];mid.replaceWith(sp);node=after}})}
-["#timeline","#story","#characters .sec"].forEach(q=>document.querySelectorAll(q).forEach(glossify));
+["#timeline .tl","#story .wpage","#characters .wpage"].forEach(q=>document.querySelectorAll(q).forEach(glossify));
 const gtip=document.createElement("div");gtip.id="gtip";document.body.appendChild(gtip);let gOn=null;
 function gShow(el){const host=el.closest("dialog")||document.body;if(gtip.parentNode!==host)host.appendChild(gtip);const r=el.getBoundingClientRect();gtip.innerHTML=`<b>${el.dataset.g}</b>${GL[el.dataset.g]}`;let x=Math.min(r.left,innerWidth-262),y=r.bottom+8;if(y+90>innerHeight)y=r.top-gtip.offsetHeight-8;gtip.style.left=Math.max(8,x)+"px";gtip.style.top=y+"px";gtip.classList.add("on");gOn=el}
 function gHide(){gtip.classList.remove("on");gOn=null}
@@ -2090,7 +2122,7 @@ function goTo(pid,el){if(location.hash.slice(1)!==pid){location.hash=pid}setTime
 const SX=document.getElementById("sx"),SXQ=document.getElementById("sxQ"),SXR=document.getElementById("sxR"),SXN=document.getElementById("sxN");
 let SIDX=null;
 function buildIdx(){SIDX=[];pages.forEach(p=>{p.querySelectorAll(".wrap p, .wrap li, .wrap tr, .tier, .split>div, figcaption, .duo p").forEach(el=>{if(el.closest(".head-c,.hyp,#agecalc,.rel-list,.relpanel"))return;if(el.querySelector("p,li,tr"))return;const t=txtOf(el);if(t.length<2)return;SIDX.push({pid:p.id,where:p.dataset.ko+(secLabel(el)?" · "+secLabel(el):""),t,el})})});
- C.forEach(c=>{const t=[c.full,c.ro,c.line,c.role,c.house,c.ability,c.outer,c.inner,c.want,c.flaw,...c.facts,...c.likes,...c.dislikes].filter(Boolean).join(" · ").replace(/\*/g,"");SIDX.push({cid:c.id,where:"인물 · "+c.name,t})})}
+ C.forEach(c=>{const t=[c.full,c.ro,c.line,c.bio,c.role,c.house,c.ability,c.outer,c.inner,c.want,c.flaw,...c.facts,...c.likes,...c.dislikes].filter(Boolean).join(" · ").replace(/\*/g,"");SIDX.push({cid:c.id,where:"인물 · "+c.name,t})})}
 function hl(t,q){const i=t.toLowerCase().indexOf(q.toLowerCase());if(i<0)return esc(t.slice(0,90));const a=Math.max(0,i-34),b=Math.min(t.length,i+q.length+56);return(a?"…":"")+esc(t.slice(a,i))+"<mark>"+esc(t.slice(i,i+q.length))+"</mark>"+esc(t.slice(i+q.length,b))+(b<t.length?"…":"")}
 function runSearch(){const q=SXQ.value.trim();if(!q){SXR.innerHTML="";SXN.textContent="";return}if(!SIDX)buildIdx();
  const r=SIDX.filter(x=>x.t.toLowerCase().includes(q.toLowerCase())).slice(0,40);SXN.textContent=r.length?`${r.length}${r.length===40?"+":""}곳`:"찾는 내용이 없다";
@@ -2102,10 +2134,10 @@ SXR.addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(!
 document.addEventListener("keydown",e=>{if(intro.style.display!=="none")return;if((e.key==="/"&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))||(e.key.toLowerCase()==="k"&&(e.metaKey||e.ctrlKey))){e.preventDefault();openSx(true)}else if(e.key==="Escape"&&SX.classList.contains("open"))openSx(false)});
 /* 시점 계산 */
 const acR=document.getElementById("acR"),acL=document.getElementById("acL"),acM=document.getElementById("acM");
-const tlRows=[...document.querySelectorAll("#timeline tbody tr")].map(tr=>{const y=tr.querySelector("td.y");const t=y?y.childNodes[0].textContent:"";const n=t.match(/\d+/g);return{tr,a:n?+n[0]:null,b:n?+(n[1]||n[0]):null}});
+const tlRows=[...document.querySelectorAll("#timeline .ev")].map(tr=>({tr,a:+tr.dataset.a,b:+tr.dataset.b}));
 function ageCalc(){const m=+acR.value;acM.textContent=m;const d=29-m;
  acL.innerHTML=C.filter(c=>c.id!=="melissa").map(c=>{const a=c.age-d;return a>=0?`<div><span class="av" style="background-image:url(img/${c.id}.jpg)"></span><span>${esc(c.name)} <b>${a}</b></span></div>`:`<div class="no"><span class="av" style="background-image:url(img/${c.id}.jpg)"></span><span>${esc(c.name)}<br>태어나기 전</span></div>`}).join("");
- tlRows.forEach(r=>r.tr.classList.toggle("hl",r.a!==null&&m>=r.a&&m<=r.b))}
+ tlRows.forEach(r=>r.tr.classList.toggle("hl",m>=r.a&&m<=r.b))}
 acR.addEventListener("input",ageCalc);ageCalc();
 /* 가설 모아보기 */
 (function(){const hyl=document.getElementById("hyl");const items=[];

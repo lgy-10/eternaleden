@@ -591,6 +591,40 @@ svg.focus .node:not(.hit){opacity:.2}
 .cov p{margin:0;font-size:14.5px;line-height:1.85}
 .cov .cw p{color:#3a3a40}.cov .cb p{color:#c9c9d2}
 @media (max-width:760px){.mg-hero{grid-template-columns:1fr;gap:20px}.mg-hero.rev .mgfig{order:-1}.cmps{grid-template-columns:1fr}.cmpc svg{max-width:240px;margin:0 auto}.arts{grid-template-columns:1fr 1fr}.cov{grid-template-columns:1fr}}
+
+/* ---- editorial: 상자 걷어내기 ---- */
+.inst,.art,.cmpc,.land,.fac,.tl .eb,.acts li,.tile{background:none!important;box-shadow:none!important}
+.inst,.art,.land,.fac{border:0!important;border-top:1px solid var(--ink)!important;padding:18px 0 0!important}
+.insts,.arts,.lands,.facs,.cmps{gap:34px 40px!important}
+.land.main{border-top:2px solid var(--blue)!important}
+.land{grid-template-columns:56px 1fr!important}
+.land svg{width:56px!important;height:56px!important}
+.fac{border-left:0!important}
+.fac:nth-child(3){border-top-color:var(--blue)!important}
+.fq{font-size:18px!important;letter-spacing:-.01em}
+.tiles{background:none!important;border:0!important;gap:0 40px!important}
+.tile{padding:18px 0 20px!important;border-top:1px solid var(--line)}
+.tile.dark{grid-column:1/-1;color:inherit!important;border-top:1px solid var(--ink)!important;padding-left:0!important}
+.tile.dark small{color:var(--blue)!important}
+.tile.dark p{font-size:16.5px!important;line-height:1.9!important;font-weight:500}
+.acts{gap:0!important}
+.acts li{border:0!important;border-top:1px solid var(--line)!important;padding:26px 0!important;grid-template-columns:96px 1fr!important;color:inherit!important}
+.acts li:last-child{border-bottom:1px solid var(--line)!important}
+.acts .an{font-size:46px!important;color:#c9c9d0!important}
+.acts li.dk .an{color:var(--blue)!important}
+.acts li.dk p{color:#3a3a40!important}.acts li.dk h4 i{color:var(--gray)!important}
+.acts li.dk h4{color:var(--blue)}
+.tl .eb{border:0!important;padding:2px 0 10px!important}
+.tl .ev{padding:16px 0!important}
+.tl .ev.hl .eb h4{color:var(--blue)}
+.art svg{max-width:132px!important;margin:0 0 16px!important}
+.art.dk{color:inherit!important}.art.dk p{color:#4a4a52!important}.art.dk i{color:var(--gray)!important}
+.art .no{display:block;font-family:var(--en);font-size:13px;color:var(--gray);margin-bottom:10px}
+.cmpc{border:0!important;padding:0!important}
+.cmpc small{border-top:1px solid var(--line);padding-top:12px}
+.inst.ord svg{margin-bottom:14px}
+.mg-hero{gap:56px!important}
+@media (max-width:760px){.insts,.arts,.lands,.facs,.cmps{gap:28px!important}.acts li{grid-template-columns:56px 1fr!important}.acts .an{font-size:32px!important}}
 </style>
 </head>
 <body>
@@ -1726,10 +1760,10 @@ svg.focus .node:not(.hit){opacity:.2}
 
     <div class="wblk"><div class="wh"><span class="wk">유물</span><span class="we">Artifacts</span></div>
       <div class="arts">
-        <div class="art"><svg viewBox="0 0 120 120"><path d="M30 22 H88 a4 4 0 0 1 4 4 V96 a4 4 0 0 1 -4 4 H30Z" fill="#fdfdfd" stroke="#3a3a42" stroke-width="1.2"/><path d="M30 22 V100 M36 22 V100" stroke="#3a3a42" stroke-width="1"/><path d="M92 30 H96 V102 H34 V100" fill="none" stroke="#b8b8c0" stroke-width="1"/><circle cx="64" cy="58" r="16" fill="none" stroke="#1f30e6" stroke-width="1"/><circle cx="64" cy="58" r="10" fill="none" stroke="#1f30e6" stroke-width="1"/><circle cx="64" cy="58" r="4" fill="#1f30e6"/><path d="M50 84 H78" stroke="#c7ccf7" stroke-width="1"/></svg><b>하얀 책</b><i>The White Book</i><p>계약의 근원. 신화 속 아이와 동행하던 존재가 스스로 변한 책이다. 펼칠 수 있는 사람은 계약자뿐이고, 다른 이의 눈에는 아무것도 쓰여 있지 않은 빈 책으로 보인다.<sup class="h">*</sup></p></div>
-        <div class="art"><svg viewBox="0 0 120 120"><path d="M14 60 Q60 22 106 60 Q60 98 14 60Z" fill="#fdfdfd" stroke="#3a3a42" stroke-width="1.2"/><circle cx="60" cy="60" r="22" fill="#eef0ff" stroke="#1f30e6" stroke-width="1"/><circle cx="60" cy="60" r="16" fill="none" stroke="#1f30e6" stroke-width=".9"/><circle cx="60" cy="60" r="10" fill="none" stroke="#1f30e6" stroke-width=".9"/><circle cx="60" cy="60" r="4.5" fill="#17171b"/><circle cx="54" cy="53" r="2.4" fill="#fff"/></svg><b>계약의 눈</b><i>The Covenant Mark</i><p>계약자에게 새겨지는 표식. 눈동자에 동심원 무늬가 떠오르고, 감각을 하나씩 내줄 때마다 무늬가 한 겹씩 늘어난다고 한다.<sup class="h">*</sup></p></div>
-        <div class="art"><svg viewBox="0 0 120 120"><path d="M30 14 Q60 54 90 14" fill="none" stroke="#8a8a92" stroke-width="1" stroke-dasharray="2 2.5"/><circle cx="60" cy="44" r="3.5" fill="none" stroke="#3a3a42" stroke-width="1"/><defs><linearGradient id="p9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f5ff"/><stop offset=".55" stop-color="#c7ccf7"/><stop offset="1" stop-color="#7d88e6"/></linearGradient><clipPath id="p9c"><path d="M47.5,59.7 L72.5,59.7 L86.0,69.3 L60.0,100.0 L34.0,69.3Z"/></clipPath></defs><path d="M47.5,59.7 L72.5,59.7 L86.0,69.3 L60.0,100.0 L34.0,69.3Z" fill="url(#p9)" stroke="#1f30e6" stroke-width="1" stroke-linejoin="round"/><g clip-path="url(#p9c)" stroke="#1f30e6" stroke-width=".6" fill="none" opacity=".75"><path d="M34.0,69.3 L86.0,69.3"/><path d="M34.0,69.3 L47.5,59.7"/><path d="M34.0,69.3 L60.0,100.0"/><path d="M42.7,69.3 L47.5,59.7"/><path d="M42.7,69.3 L60.0,100.0"/><path d="M51.3,69.3 L55.8,59.7"/><path d="M51.3,69.3 L60.0,100.0"/><path d="M60.0,69.3 L64.2,59.7"/><path d="M60.0,69.3 L60.0,100.0"/><path d="M68.7,69.3 L64.2,59.7"/><path d="M68.7,69.3 L60.0,100.0"/><path d="M77.3,69.3 L64.2,59.7"/><path d="M77.3,69.3 L60.0,100.0"/><path d="M86.0,69.3 L72.5,59.7"/><path d="M86.0,69.3 L60.0,100.0"/></g><path d="M53.5,62.3 l3.1,0 l-7.8,9.1 l-2.6,0z" fill="#fff" opacity=".8"/><g transform="translate(76.1,55.8)"><path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2Z" fill="#1f30e6" opacity=".7"/></g></svg><b>심장 보석</b><i>Heartstone</i><p>죽은 이의 두 번째 심장이 남긴 보석. 가족이 목걸이로 만들어 유품처럼 지니고, 강한 능력자의 것은 암시장에서 높은 값에 팔린다.<sup class="h">*</sup></p></div>
-        <div class="art dk"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="#24242b" stroke="#3a3a44" stroke-width="1"/><circle cx="60" cy="60" r="31" fill="none" stroke="#8f2328" stroke-width="1.2"/><path d="M60 29 V91 M29 60 H91" stroke="#6d2226" stroke-width=".8" transform="rotate(45 60 60)"/><path d="M60 40 C68 52 70 60 60 74 C50 60 52 52 60 40Z" fill="#c23a40"/><path d="M60 74 v10" stroke="#c23a40" stroke-width="1.4"/><circle cx="60" cy="88" r="2" fill="#c23a40"/></svg><b>흑마술의 흔적</b><i>The Black Mark</i><p>흑마술로 일으킨 몸에 남는 흔적. 체온이 낮고 피가 금방 모자라며, 가까이 다가가면 희미한 쇠 냄새가 난다. 국교가 이단을 가려낼 때 가장 먼저 찾는 단서다.<sup class="h">*</sup></p></div>
+        <div class="art"><span class="no">No. 01</span><svg viewBox="0 0 120 120"><path d="M30 22 H88 a4 4 0 0 1 4 4 V96 a4 4 0 0 1 -4 4 H30Z" fill="#fdfdfd" stroke="#3a3a42" stroke-width="1.2"/><path d="M30 22 V100 M36 22 V100" stroke="#3a3a42" stroke-width="1"/><path d="M92 30 H96 V102 H34 V100" fill="none" stroke="#b8b8c0" stroke-width="1"/><circle cx="64" cy="58" r="16" fill="none" stroke="#1f30e6" stroke-width="1"/><circle cx="64" cy="58" r="10" fill="none" stroke="#1f30e6" stroke-width="1"/><circle cx="64" cy="58" r="4" fill="#1f30e6"/><path d="M50 84 H78" stroke="#c7ccf7" stroke-width="1"/></svg><b>하얀 책</b><i>The White Book</i><p>계약의 근원. 신화 속 아이와 동행하던 존재가 스스로 변한 책이다. 펼칠 수 있는 사람은 계약자뿐이고, 다른 이의 눈에는 아무것도 쓰여 있지 않은 빈 책으로 보인다.<sup class="h">*</sup></p></div>
+        <div class="art"><span class="no">No. 02</span><svg viewBox="0 0 120 120"><path d="M14 60 Q60 22 106 60 Q60 98 14 60Z" fill="#fdfdfd" stroke="#3a3a42" stroke-width="1.2"/><circle cx="60" cy="60" r="22" fill="#eef0ff" stroke="#1f30e6" stroke-width="1"/><circle cx="60" cy="60" r="16" fill="none" stroke="#1f30e6" stroke-width=".9"/><circle cx="60" cy="60" r="10" fill="none" stroke="#1f30e6" stroke-width=".9"/><circle cx="60" cy="60" r="4.5" fill="#17171b"/><circle cx="54" cy="53" r="2.4" fill="#fff"/></svg><b>계약의 눈</b><i>The Covenant Mark</i><p>계약자에게 새겨지는 표식. 눈동자에 동심원 무늬가 떠오르고, 감각을 하나씩 내줄 때마다 무늬가 한 겹씩 늘어난다고 한다.<sup class="h">*</sup></p></div>
+        <div class="art"><span class="no">No. 03</span><svg viewBox="0 0 120 120"><path d="M30 14 Q60 54 90 14" fill="none" stroke="#8a8a92" stroke-width="1" stroke-dasharray="2 2.5"/><circle cx="60" cy="44" r="3.5" fill="none" stroke="#3a3a42" stroke-width="1"/><defs><linearGradient id="p9" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4f5ff"/><stop offset=".55" stop-color="#c7ccf7"/><stop offset="1" stop-color="#7d88e6"/></linearGradient><clipPath id="p9c"><path d="M47.5,59.7 L72.5,59.7 L86.0,69.3 L60.0,100.0 L34.0,69.3Z"/></clipPath></defs><path d="M47.5,59.7 L72.5,59.7 L86.0,69.3 L60.0,100.0 L34.0,69.3Z" fill="url(#p9)" stroke="#1f30e6" stroke-width="1" stroke-linejoin="round"/><g clip-path="url(#p9c)" stroke="#1f30e6" stroke-width=".6" fill="none" opacity=".75"><path d="M34.0,69.3 L86.0,69.3"/><path d="M34.0,69.3 L47.5,59.7"/><path d="M34.0,69.3 L60.0,100.0"/><path d="M42.7,69.3 L47.5,59.7"/><path d="M42.7,69.3 L60.0,100.0"/><path d="M51.3,69.3 L55.8,59.7"/><path d="M51.3,69.3 L60.0,100.0"/><path d="M60.0,69.3 L64.2,59.7"/><path d="M60.0,69.3 L60.0,100.0"/><path d="M68.7,69.3 L64.2,59.7"/><path d="M68.7,69.3 L60.0,100.0"/><path d="M77.3,69.3 L64.2,59.7"/><path d="M77.3,69.3 L60.0,100.0"/><path d="M86.0,69.3 L72.5,59.7"/><path d="M86.0,69.3 L60.0,100.0"/></g><path d="M53.5,62.3 l3.1,0 l-7.8,9.1 l-2.6,0z" fill="#fff" opacity=".8"/><g transform="translate(76.1,55.8)"><path d="M0,-6 L1.2,-1.2 L6,0 L1.2,1.2 L0,6 L-1.2,1.2 L-6,0 L-1.2,-1.2Z" fill="#1f30e6" opacity=".7"/></g></svg><b>심장 보석</b><i>Heartstone</i><p>죽은 이의 두 번째 심장이 남긴 보석. 가족이 목걸이로 만들어 유품처럼 지니고, 강한 능력자의 것은 암시장에서 높은 값에 팔린다.<sup class="h">*</sup></p></div>
+        <div class="art dk"><span class="no">No. 04</span><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="40" fill="#24242b" stroke="#3a3a44" stroke-width="1"/><circle cx="60" cy="60" r="31" fill="none" stroke="#8f2328" stroke-width="1.2"/><path d="M60 29 V91 M29 60 H91" stroke="#6d2226" stroke-width=".8" transform="rotate(45 60 60)"/><path d="M60 40 C68 52 70 60 60 74 C50 60 52 52 60 40Z" fill="#c23a40"/><path d="M60 74 v10" stroke="#c23a40" stroke-width="1.4"/><circle cx="60" cy="88" r="2" fill="#c23a40"/></svg><b>흑마술의 흔적</b><i>The Black Mark</i><p>흑마술로 일으킨 몸에 남는 흔적. 체온이 낮고 피가 금방 모자라며, 가까이 다가가면 희미한 쇠 냄새가 난다. 국교가 이단을 가려낼 때 가장 먼저 찾는 단서다.<sup class="h">*</sup></p></div>
       </div>
     </div>
 
